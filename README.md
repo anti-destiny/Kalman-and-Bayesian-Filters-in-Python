@@ -1,3 +1,8 @@
+# [卡尔曼和贝叶斯滤波器的Python实现]
+rlabbe的“Kalman and Bayesian Filters in Python”的个人翻译版。目前仍在施工中。已经翻译/翻译中的章节有第二、三、四章。
+
+以下是原作者的介绍。
+
 # [Kalman and Bayesian Filters in Python](https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python)
 
 
