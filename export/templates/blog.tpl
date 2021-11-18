@@ -70,7 +70,7 @@ div#notebook-container{
 {% block markdowncell scoped %}
 {% if 'tran' in cell['metadata'].get('tags', []) %}{% else %}<div style="float:left;width:100%">{% endif %}
 <div class="cell border-box-sizing text_cell rendered {% if 'tran' in cell['metadata'].get('tags', []) %}right{% else %}left{% endif %}"
-	style="width:50%;float:left;"
+	{% if 'common' not in cell['metadata'].get('tags', []) %}style="width:50%;float:left;"{% else %}style="width:50%;left:25%;position:relative;"{% endif %}
 >
 {%- if resources.global_content_filter.include_input_prompt-%}
 {{ self.empty_in_prompt() }}
