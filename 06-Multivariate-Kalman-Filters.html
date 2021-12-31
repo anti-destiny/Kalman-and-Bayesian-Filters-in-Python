@@ -11795,6 +11795,18 @@ div#notebook {
 </div>
 </div>
 </div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="&#22810;&#35722;&#37327;&#21345;&#29246;&#26364;&#28670;&#27874;&#22120;">&#22810;&#35722;&#37327;&#21345;&#29246;&#26364;&#28670;&#27874;&#22120;<a class="anchor-link" href="#&#22810;&#35722;&#37327;&#21345;&#29246;&#26364;&#28670;&#27874;&#22120;">&#182;</a></h1><p>同時濾除多個變量中的噪聲。</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
@@ -11864,6 +11876,17 @@ div#notebook {
 </div>
 </div>
 </div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#31777;&#20171;">&#31777;&#20171;<a class="anchor-link" href="#&#31777;&#20171;">&#182;</a></h2>
+</div>
+</div>
+</div>
 <div style="float:left;width:100%">
 <div class="cell border-box-sizing text_cell rendered left"
 	style="width:50%;float:left;"
@@ -11878,6 +11901,20 @@ div#notebook {
 </div>
 </div>
 </div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>我們已經做好了萬全準備，可以著手實現完整的，多變量形式的，卡爾曼濾波器了。上一章我們學習了如何用多變量高斯分佈來表示多個隨機變量，例如飛行器的位置和速度，之間的相關性。我們也學習了如何使用變量之間的相關性顯著改善後驗分佈的性能。雖然位置和速度是粗略的，但由於知道兩者之間的相關性，我們能取得非常準確的新估計。</p>
+<p>我希望能通過這幾個示例，讓你對這些濾波器的工作方法有一個直觀的理解。我會先掩蓋一些問題。我所展示的部分內容可能只適用於特殊場景。有的內容看起來很“神奇”——因為你不知道這個結果是如何推導出來的。但如果我從嚴格的，通用的數學公式開始講解，你又可能會不住撓頭，因為你想不通每項的含義，不明白如何應用這些結果。我會在後續章節提供更嚴格的數學基礎，這時我還會修正本章的一些近似做法，提供本章未能給出的額外信息。</p>
+<p>為了達到我們的目的，我需要將問題限制在能夠用牛頓運動公式描述的問題這一子集中。這類濾波器被稱為“離散連續時間運動濾波器”。在<strong>卡爾曼濾波器的數學原理</strong>一章中我們會提供非牛頓系統的數學推導。</p>
+
+</div>
+</div>
+</div>
 <div style="float:left;width:100%">
 <div class="cell border-box-sizing text_cell rendered left"
 	style="width:50%;float:left;"
@@ -11886,21 +11923,204 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Newton's-Equations-of-Motion">Newton's Equations of Motion<a class="anchor-link" href="#Newton's-Equations-of-Motion">&#182;</a></h2><p>Newton's equations of motion tells us that given a constant velocity $v$ of a system we can compute its position $x$ after time $t$ with:</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#29275;&#38931;&#36939;&#21205;&#20844;&#24335;">&#29275;&#38931;&#36939;&#21205;&#20844;&#24335;<a class="anchor-link" href="#&#29275;&#38931;&#36939;&#21205;&#20844;&#24335;">&#182;</a></h2><p>根據牛頓運動公式，若系統的速度$v$已知且恆定，那麼我們可以計算其$t$時刻後的位置$x$：</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:80%;left:10%;position:relative;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>$$x = vt + x_0$$</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:50%;float:left;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>For example, if we start at position 13, our velocity is 10 m/s, and we travel for 12 seconds our final position is 133 ($10\times 12 + 13$).</p>
 <p>We can incorporate constant acceleration with this equation</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>例如，設起始位置為13，速度為10m/s，那麼12秒後的最終位置為133（$10\times 12 + 13$）。</p>
+<p>我們可以往式子中再加入恆定的加速度：</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:80%;left:10%;position:relative;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>$$x = \frac{1}{2}at^2 + v_0t + x_0$$</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:50%;float:left;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>And if we assume constant jerk we get</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>又或者假設急動度（譯者註：又稱為力變率）恆定，則有：</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:80%;left:10%;position:relative;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>$$x = \frac{1}{6}jt^3 +  \frac{1}{2}a_0 t^2 + v_0 t + x_0$$</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:50%;float:left;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>These equations were generated by integrating a differential equation. Given a constant velocity v we can compute the distance traveled over time with the equation</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>這些方程是通過對微分方程求積分生成的。給定一個恆定的速度$v$，我們可以用方程計算物體隨時間移動的距離。例如下式</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:80%;left:10%;position:relative;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>$$x = vt + x_0$$</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:50%;float:left;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>which we can derive with</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>可以通過如下方式推導</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:80%;left:10%;position:relative;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>$$\begin{aligned} v &amp;= \frac{dx}{dt}\\
 dx &amp;= v\, dt \\
 \int_{x_0}^x\, dx &amp;= \int_0^t v\, dt\\
 x - x_0 &amp;= vt - 0\\
 x &amp;= vt + x_0\end{aligned}$$</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:50%;float:left;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>When you design a Kalman filter you start with a system of differential equations that describe the dynamics of the system. Most systems of differential equations do not easily integrate in this way. We start with Newton's equation because we can integrate and get a closed form solution, which makes the Kalman filter easier to design. An added benefit is that Newton's equations are the right equations to use to track moving objects, one of the main uses of Kalman filters.</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>但是當你為一個運動系統設計卡爾曼濾波器，而該系統是由微分方程所描述的時，大多數系統都很難通過這種方式求解。我們從牛頓運動公式的例子開始講起，是因為該公式的積分可求，能夠得到閉式解，這樣卡爾曼濾波器就好設計。另一個優點在於我們可以用牛頓運動公式來跟蹤運動物體，這也是卡爾曼濾波器的主要用途之一。</p>
 
 </div>
 </div>
@@ -14104,10 +14324,10 @@ $$x_k = x_{k-1} + 1$$</p>
 
  
  
-<div id="4f570d18-d3a0-4faf-adae-07730909fbb9"></div>
+<div id="e767c7bd-8da6-4417-972f-6244cbe248cf"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#4f570d18-d3a0-4faf-adae-07730909fbb9');
+var element = $('#e767c7bd-8da6-4417-972f-6244cbe248cf');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "a828518321f448be916ab551fe70519e", "version_major": 2, "version_minor": 0}

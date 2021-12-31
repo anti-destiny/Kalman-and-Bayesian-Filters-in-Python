@@ -11794,6 +11794,17 @@ div#notebook {
 </div>
 </div>
 </div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="&#31890;&#23376;&#28388;&#27874;">&#31890;&#23376;&#28388;&#27874;<a class="anchor-link" href="#&#31890;&#23376;&#28388;&#27874;">&#182;</a></h1>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
@@ -11878,6 +11889,47 @@ div#notebook {
 <li><p><strong>unknown process model</strong>: we may not know the process model of the system</p>
 </li>
 </ul>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#30446;&#30340;">&#30446;&#30340;<a class="anchor-link" href="#&#30446;&#30340;">&#182;</a></h2><p>我們要處理的是這樣問題：跟蹤運動的多個物體。這些物體可能是戰鬥機和導彈，也有可能是板球場上的隊員們。具體是什麽問題並不重要。重要的是我們應該選擇什麽樣的濾波器來處理這些問題呢？不幸的是，沒有一個濾波器是理想的。讓我們看看這些問題具有什麽性質：</p>
+<ul>
+<li><p><strong>多峰</strong>：我們要跟蹤的目標的數量可以是0個，一個，或者一個以上。</p>
+</li>
+<li><p><strong>遮擋</strong>：一個物體可能隱藏於另一物體之後，從而導致對於多個目標，我們只獲得一個檢測結果。</p>
+</li>
+<li><p><strong>非綫性運動</strong>：飛行器猛烈撞擊氣流，球作抛物綫運動，運動員閒發生相互碰撞。</p>
+</li>
+<li><p><strong>非綫性測量</strong>：雷達獲取它到目標的距離，再將距離轉化爲(x,y,z)坐標，其中用到的開方會導致非綫性。</p>
+</li>
+<li><p><strong>非高斯噪聲</strong>：物體在背景上移動時，計算機視覺系統可能將背景誤識別為物體。</p>
+</li>
+<li><p><strong>連續性</strong>：物體的位置和速度（即狀態空間）隨時間平滑地變化。</p>
+</li>
+<li><p><strong>多變量</strong>：我們要同時跟蹤多個屬性，包括位置、速度、角速度等。</p>
+</li>
+<li><p><strong>過程模型未知</strong>：我們可能不瞭解系統的過程模型。</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:50%;float:left;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>None of the filters we have learned work well with all of these constraints.</p>
 <ul>
 <li><p><strong>Discrete Bayes filter</strong>: This has most of the attributes. It is multimodal, can handle nonlinear measurements, and can be extended to work with nonlinear behavior. However, it is discrete and univariate.</p>
@@ -11893,6 +11945,28 @@ div#notebook {
 </div>
 </div>
 </div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>我們學過的濾波器中，沒有一個能應對所有這些約束。</p>
+<ul>
+<li><p><strong>離散貝葉斯濾波器</strong>：它具有最多我們需要的特性。它是多峰的，能處理非綫性的測量模型，可以拓展到非綫性運動的條件下。遺憾的是它是離散和單變臉的。</p>
+</li>
+<li><p><strong>卡爾曼濾波器</strong>：卡爾曼濾波器能對帶有高斯噪聲的單峰綫性系統做出最優估計。所有這些無一與我們的問題相符。</p>
+</li>
+<li><p><strong>無跡卡爾曼濾波器</strong>：UKF能處理非綫性的、連續的、多變量的問題。然而，它既不是多峰的，也不能處理遮擋問題。它可以處理適度偏離高斯分佈的噪聲，但對於嚴重不滿足高斯分佈，或者問題十分非綫性的時候效果不好。</p>
+</li>
+<li><p><strong>擴展卡爾曼濾波器</strong>：EKF與UKF有相同的優點和局限，區別在於它對強非綫性和非高斯噪聲更加敏感。</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
 <div style="float:left;width:100%">
 <div class="cell border-box-sizing text_cell rendered left"
 	style="width:50%;float:left;"
@@ -11901,6 +11975,18 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Monte-Carlo-Sampling">Monte Carlo Sampling<a class="anchor-link" href="#Monte-Carlo-Sampling">&#182;</a></h2><p>In the UKF chapter I generated a plot similar to this to illustrate the effects of nonlinear systems on Gaussians:</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#33945;&#29305;&#21345;&#27931;&#37319;&#27171;">&#33945;&#29305;&#21345;&#27931;&#37319;&#27171;<a class="anchor-link" href="#&#33945;&#29305;&#21345;&#27931;&#37319;&#27171;">&#182;</a></h2><p>在UKF一章，我生成了一張圖用於展示非綫性系統對高斯分佈的影響：</p>
 
 </div>
 </div>
