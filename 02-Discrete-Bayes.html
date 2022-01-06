@@ -12816,10 +12816,10 @@ probability of wall = 0.06249999999999999
 
  
  
-<div id="7f9e1a6c-a79d-4099-9296-87d5f1c2bd68"></div>
+<div id="a6a90ccb-4bc2-4402-b702-36da92fde70e"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#7f9e1a6c-a79d-4099-9296-87d5f1c2bd68');
+var element = $('#a6a90ccb-4bc2-4402-b702-36da92fde70e');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "c843809cb0c04f179c4530802610ff1e", "version_major": 2, "version_minor": 0}
@@ -12868,7 +12868,7 @@ var element = $('#7f9e1a6c-a79d-4099-9296-87d5f1c2bd68');
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="&#34899;&#35486;">&#34899;&#35486;<a class="anchor-link" href="#&#34899;&#35486;">&#182;</a></h2><p>我們暫停複習一下術語。我上一章已經介紹過這些術語，但我們稍微花幾秒鐘鞏固一下知識。</p>
 <p>所谓<strong>系統</strong>是我們嘗試建模和濾波的對象。這裡，系統指的是那隻狗。<strong>狀態</strong>表示當前的配置或數值。本章中，狀態是狗的位置。我們一般無法知道真實的狀態，所以我們說濾波器得到的是<strong>狀態估計</strong>。實踐中我們往往也將其稱為狀態，所以你要小心理解上下文。</p>
-<p>一個預測步和一個根據測量更新轉態的更新步構成一個循環，這個循環被稱為狀態的<strong>演化</strong>，或系統的演化，它是<strong>時間演化</strong>【7】的縮寫。另一個術語是<strong>系統傳播</strong>。他指的是狀態是如何隨著時間改變的。對於濾波器，時間步是離散的，例如一秒的時間。對於我們的狗的跟蹤問題而言，系統的狀態是狗的位置，狀態的演化是經過一段離散的時間步後狗的位置的改變。</p>
+<p>一個預測步和一個根據測量更新狀態的更新步構成一個循環，這個循環被稱為狀態的<strong>演化</strong>，或系統的演化，它是<strong>時間演化</strong>【7】的縮寫。另一個術語是<strong>系統傳播</strong>。他指的是狀態是如何隨著時間改變的。對於濾波器，時間步是離散的，例如一秒的時間。對於我們的狗的跟蹤問題而言，系統的狀態是狗的位置，狀態的演化是經過一段離散的時間步後狗的位置的改變。</p>
 <p>我們用“過程模型”來建模系統的行為。這裡，我們的過程模型是夠經過每個時間步都會移動一段距離。這個模型並不精確地建模狗的運動。模型的誤差稱為“系統誤差”或者“過程誤差”。</p>
 <p>每個預測結果都給我們一個新的“先驗”。隨著時間的推進，我們在無測量結果輔助的情況下做出下一時刻的預測。</p>
 <p>讓我們看一個例子。當前狗的位置是17m。一個時間步是兩秒，狗的速度是15米每秒。我們預測它兩秒後的位置會在哪裡。</p>
@@ -12974,14 +12974,14 @@ var element = $('#7f9e1a6c-a79d-4099-9296-87d5f1c2bd68');
 </div>
 </div>
 </div>
-<div style="float:left;width:100%">
-<div class="cell border-box-sizing text_cell rendered left"
-	style="width:50%;float:left;"
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
 ><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>看起來代碼工作正常。現在我們看看執行度不是100%的情況會是怎樣？</p>
+<p>看起來代碼工作正常。現在我們看看置信度不是100%的情況會是怎樣？</p>
 
 </div>
 </div>
@@ -13116,10 +13116,10 @@ var element = $('#7f9e1a6c-a79d-4099-9296-87d5f1c2bd68');
 
  
  
-<div id="c16fc9e4-de77-46fa-b208-75b33bff2485"></div>
+<div id="dfd1334d-5be5-4163-b010-c0deb1e92182"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#c16fc9e4-de77-46fa-b208-75b33bff2485');
+var element = $('#dfd1334d-5be5-4163-b010-c0deb1e92182');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "ad2cd118265f4f5db4e730125ed815fb", "version_major": 2, "version_minor": 0}
@@ -13208,9 +13208,9 @@ var element = $('#c16fc9e4-de77-46fa-b208-75b33bff2485');
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>另外，如果你通過線上方式閱讀本書，這裡有輸出的動圖。
+<p>另外，如果你通過線上方式閱讀本書，你會看到這裡有輸出的動圖。
 <img src="animations/02_no_info.gif"></p>
-<p>這之後我就不會再生成單獨的動圖了。請遵循本前言部分的介紹在網頁上，或者在你電腦上配置IPython，以免費運行本書內容。這樣你就能運行所有單元格並且看到動圖。為了能練習本書代碼而不僅僅是被動閱讀，這點非常重要。</p>
+<p>這之後我就不會再生成單獨的動圖了。請遵循本前言部分的介紹在網頁上，或者在你電腦上配置IPython以免費運行本書內容。這樣你就能運行所有單元格並且看到動圖。為了能練習本書代碼而不僅僅是被動閱讀，這點非常重要。</p>
 
 </div>
 </div>
@@ -13224,7 +13224,42 @@ var element = $('#c16fc9e4-de77-46fa-b208-75b33bff2485');
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Generalizing-with-Convolution">Generalizing with Convolution<a class="anchor-link" href="#Generalizing-with-Convolution">&#182;</a></h2><p>We made the assumption that the movement error is at most one position. But it is possible for the error to be two, three, or more positions. As programmers we always want to generalize our code so that it works for all cases.</p>
 <p>This is easily solved with <a href="https://en.wikipedia.org/wiki/Convolution"><em>convolution</em></a>. Convolution modifies one function with another function. In our case we are modifying a probability distribution with the error function of the sensor. The implementation of <code>predict_move()</code> is a convolution, though we did not call it that. Formally, convolution is defined as</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#22312;&#21367;&#31309;&#30340;&#24171;&#21161;&#19979;&#25512;&#24291;&#35442;&#26041;&#27861;">&#22312;&#21367;&#31309;&#30340;&#24171;&#21161;&#19979;&#25512;&#24291;&#35442;&#26041;&#27861;<a class="anchor-link" href="#&#22312;&#21367;&#31309;&#30340;&#24171;&#21161;&#19979;&#25512;&#24291;&#35442;&#26041;&#27861;">&#182;</a></h2><p>我們先前假設位移的誤差最多不差過一位。但實際上可能有兩位、三位、甚至更多。作為程序員，我們總希望能將我們的代碼推廣到適應所有情況。</p>
+<p>這可以藉助<a href="https://en.wikipedia.org/wiki/Convolution"><strong>卷積</strong></a>工具輕鬆解決。卷積通過一個函數來修改另一個函數。在我們的案例中，我們用傳感器的誤差函數修改概率分佈。雖然我們之前沒這麼稱呼它，但<code>predict_move()</code>函數的實現就是一個卷積。卷積的正式定義如下：</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:80%;left:10%;position:relative;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>$$ (f \ast g) (t) = \int_0^t \!f(\tau) \, g(t-\tau) \, \mathrm{d}\tau$$</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:50%;float:left;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>where $f\ast g$ is the notation for convolving f by g. It does not mean multiply.</p>
 <p>Integrals are for continuous functions, but we are using discrete functions. We replace the integral with a summation, and the parenthesis with array brackets.</p>
 <p>$$ (f \ast g) [t] = \sum\limits_{\tau=0}^t \!f[\tau] \, g[t-\tau]$$</p>
@@ -13241,9 +13276,6 @@ var element = $('#c16fc9e4-de77-46fa-b208-75b33bff2485');
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#20511;&#21367;&#31309;&#20316;&#25512;&#24291;">&#20511;&#21367;&#31309;&#20316;&#25512;&#24291;<a class="anchor-link" href="#&#20511;&#21367;&#31309;&#20316;&#25512;&#24291;">&#182;</a></h2><p>我們先前假設位移的誤差最多不差過一位。但實際上可能有兩位、三位、甚至更多。作為程序員，我們總希望能將我們的代碼推廣到適應所有情況。</p>
-<p>這可以藉助<a href="https://en.wikipedia.org/wiki/Convolution"><strong>卷積</strong></a>工具輕鬆解決。卷積通過一個函數來修改另一個函數。在我們的案例中，我們用傳感器的誤差函數修改概率分佈。雖然我們之前沒這麼稱呼它，但<code>predict_move()</code>函數的實現就是一個卷積。卷積的正式定義如下：</p>
-<p>$$ (f \ast g) (t) = \int_0^t \!f(\tau) \, g(t-\tau) \, \mathrm{d}\tau$$</p>
 <p>其中 $f\ast g$ 表示f和g的卷積。它不代表乘法。</p>
 <p>積分對應於連續函數，但我們使用的是離散函數。我們將積分替換為求和符號，將圓括號換成數組使用的方括號。</p>
 <p>$$ (f \ast g) [t] = \sum\limits_{\tau=0}^t \!f[\tau] \, g[t-\tau]$$</p>
@@ -13783,7 +13815,8 @@ $$(0.1 \times 0.05)+ (0.8 \times 0.05) + (0.1 \times 0.55) = 0.1$$</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>我忽略了一個重要問題。起初我設對於預測操作，我們提供了運動傳感器；之後，談及狗與微波爐的例子的時候，我假定你沒有任何知識能告訴你狗突然開始運動的消息。在沒有提供代碼的情況下，我斷言道你會越來越相信狗處於運動轉態。簡而言之，在這個過程中，我們如何才能在不直接測量的條件下檢測或估計狀態的改變呢？</p>
+<p>我忽略了一個重要問題。起初我們為預測步提供了運動傳感器；之後，談及狗與微波爐的例子的時候，我又假定你沒有關於狗突然開始運動的知識，我斷言道即使如此你仍會越來越相信狗處於運動狀態，但我未提供任何證明該斷言的代碼。簡而言之，問題是，我們如何才能在不直接測量的條件下檢測或估計過程模型狀態的改變呢？</p>
+<p>我想暫時擱置這一問題。後續章節會介紹估計方法幕後的數學原理。而現在，僅僅是學習算法就已經是一個大任務。雖然解決這個問題很重要，但是我們還缺乏解決該問題所需的數學工具。那麼本章的後續部分會暫時忽略這個問題，而假設我們有一個專門用於測量運動的傳感器。</p>
 
 </div>
 </div>
@@ -14029,10 +14062,10 @@ $$(0.1 \times 0.05)+ (0.8 \times 0.05) + (0.1 \times 0.55) = 0.1$$</p>
 
  
  
-<div id="0e8fd978-bf23-4697-b46c-1d641611fcfb"></div>
+<div id="90c37b6c-bff4-4d56-a8db-5ea6ba8c971c"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#0e8fd978-bf23-4697-b46c-1d641611fcfb');
+var element = $('#90c37b6c-bff4-4d56-a8db-5ea6ba8c971c');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "5066cbd0286b47619a09b8df1a67e07a", "version_major": 2, "version_minor": 0}
@@ -14065,7 +14098,8 @@ var element = $('#0e8fd978-bf23-4697-b46c-1d641611fcfb');
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>現在，我們可以觀察到結果。你可以看到先驗是如何發生移動的，其不確定性是如何減少的。還注意到雖然先驗與後驗的極大值點重合，但後驗的確定性更高，這是後驗結合了測量信息的緣故。通過令<code>z_prob = 1.0</code>使得測量是完全zhun，以及當狗位於走廊中心時先驗的質量是如何退化的。這可以讓你有個直覺上的理解。門道的數量是很少的，所以當傳感器感應到門，我們對位置的確定性就增加。成片的非門區域則會降低確定性。</p>
+<p>現在，我們可以觀察到結果。你可以看到先驗是如何發生移動的，其不確定性是如何減少的。還注意到雖然先驗與後驗的極大值點重合，但後驗的確定性更高，這是後驗結合了測量信息的緣故。這裡通過令<code>z_prob = 1.0</code>使得測量是完全準確的。後續小節我們會探索不完美的測量造成的影響。</p>
+<p>最後一個值得注意的事是，當狗處於門前時估計的準確度是如何增加的，以及當狗位於走廊中心時它是如何退化的。你可以從直覺上理解這個問題。門的數量很少，所以一旦傳感器感應到門，我們對位置的確定性就增加。成片的非門區域則會降低確定性。</p>
 
 </div>
 </div>
@@ -14128,10 +14162,10 @@ var element = $('#0e8fd978-bf23-4697-b46c-1d641611fcfb');
 
  
  
-<div id="b89df293-7951-49c0-b020-b083faba2acc"></div>
+<div id="b8a17e62-1d46-4ff6-a001-27e7a82bfd2f"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#b89df293-7951-49c0-b020-b083faba2acc');
+var element = $('#b8a17e62-1d46-4ff6-a001-27e7a82bfd2f');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "84295f91b4554a79be140202dbac5aee", "version_major": 2, "version_minor": 0}
@@ -14381,7 +14415,7 @@ var element = $('#b89df293-7951-49c0-b020-b083faba2acc');
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#36556;&#36947;&#30340;&#34892;&#28858;&#27169;&#25836;">&#36556;&#36947;&#30340;&#34892;&#28858;&#27169;&#25836;<a class="anchor-link" href="#&#36556;&#36947;&#30340;&#34892;&#28858;&#27169;&#25836;">&#182;</a></h2><p>我們要模擬一個不完美的軌道。但我們命令移動時，它偶爾會犯一些小錯，它的傳感器有時會返回錯誤的值。</p>
+<h2 id="&#21015;&#36554;&#30340;&#34892;&#28858;&#27169;&#25836;">&#21015;&#36554;&#30340;&#34892;&#28858;&#27169;&#25836;<a class="anchor-link" href="#&#21015;&#36554;&#30340;&#34892;&#28858;&#27169;&#25836;">&#182;</a></h2><p>我們要模擬一個不完美的列車。當我們命令它移動時，它偶爾會犯一些小錯，它的傳感器有時會返回錯誤的值。</p>
 
 </div>
 </div>
@@ -14451,7 +14485,7 @@ var element = $('#b89df293-7951-49c0-b020-b083faba2acc');
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>有了這個我們就可以實現濾波器了。我們將其封裝為一個函數，以便我們可以在不同假設條件下運行這段代碼。我假設機器人總是從軌道的起點出發。我們實現的軌道長度為10個單位。你可以想象他是一個每10單位長度就放置一塊磁鐵的10000單位長度的軌道。令它長度為10有利於繪圖和分析。</p>
+<p>有了這個我們就可以實現濾波器了。我們將其封裝為一個函數，以便我們可以在不同假設條件下運行這段代碼。我假設機器人總是從軌道的起點出發。我們實現的軌道長度為10個單位。你可以想象他是一個每10單位長度就放置一塊磁鐵的10000單位長度的軌道。令長度為10有利於繪圖和分析。</p>
 
 </div>
 </div>
@@ -14521,7 +14555,7 @@ var element = $('#b89df293-7951-49c0-b020-b083faba2acc');
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>閱讀代碼并且保证你确实理解它。我們先在沒有傳感器誤差和運動誤差的情況下運行代码。如果代码正确，那么它应当能正确无误地检出目标机器人。虽然程序输出有点冗长难读，但若你对更新/预测循环的工作方式完全不确顶，你务必通读这些文字以巩固你的理解。</p>
+<p>請閱讀代碼并且保证你确实理解它。我們先在沒有傳感器誤差和運動誤差的情況下運行代码。如果代码正确，那么它应当能正确无误地检出目标机器人。虽然程序输出有点冗长难读，但若你对更新/预测循环的工作方式完全不确顶，你务必通读这些文字以巩固你的理解。</p>
 
 </div>
 </div>

@@ -11796,7 +11796,7 @@ div#notebook {
 </div>
 
 <div class="cell border-box-sizing text_cell rendered right"
-	style="width:50%;float:left;"
+	style="width:50%;float:left;line-height:150%;"
 ><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -11878,12 +11878,12 @@ div#notebook {
 </div>
 
 <div class="cell border-box-sizing text_cell rendered right"
-	style="width:50%;float:left;"
+	style="width:50%;float:left;line-height:150%;"
 ><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#31616;&#20171;">&#31616;&#20171;<a class="anchor-link" href="#&#31616;&#20171;">&#182;</a></h2><p>上一章的末尾，我们讨论了许多离散贝叶斯滤波器的缺点。对很多跟踪和滤波问题，我们需要的是<strong>单峰</strong>和<strong>连续</strong>的滤波器。即是说，我们希望我们的系统使用（连续的）浮点数运算，并且置信度最高的可能状态唯一（单峰）。举例来说，我们可以说飞行器处于（12.34, -95.54, 2389.5)的位置，三个数字分别代表纬度、经度和海拔。我们不希望滤波器给出这样的回答：“它可能位于(1.65, -78.01, 2100.45)，同時可能位於（34.36, -98.23, 2543.79).” 这類表述同我们对世界的直觀認識相悖。而且如我们之前讨论过的，多峰的情形会带来无法承受的计算代价。当然，我们也无法在有多个可能位置的情况下实现导航。</p>
+<h2 id="&#31616;&#20171;">&#31616;&#20171;<a class="anchor-link" href="#&#31616;&#20171;">&#182;</a></h2><p>上一章的末尾，我们讨论了许多离散贝叶斯滤波器的缺点。當時我們說到，对很多跟踪和滤波问题，我们需要<strong>单峰</strong>和<strong>连续</strong>的滤波器。即是说，我们希望我们的系统使用（连续的）浮点数运算，并且置信度最高的可能状态唯一（单峰）。举例来说，我们可以说飞行器处于（12.34, -95.54, 2389.5)的位置，三个数字分别代表纬度、经度和海拔。我们不希望滤波器给出这样的回答：“它可能位于(1.65, -78.01, 2100.45)，同時可能位於（34.36, -98.23, 2543.79).” 这類表述同我们对世界的直觀認識相悖。而且如我们之前讨论过的，多峰的情形会带来无法承受的计算代价。当然，我们也无法在有多个可能位置的情况下实现导航。</p>
 <p>我们需要一个单峰，连续的概率表达方式来建模世界，这能提高计算的效率。高斯分布提供了我们所需的所有功能。</p>
 
 </div>
@@ -11910,7 +11910,7 @@ div#notebook {
 </div>
 
 <div class="cell border-box-sizing text_cell rendered right"
-	style="width:50%;float:left;"
+	style="width:50%;float:left;line-height:150%;"
 ><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -11969,25 +11969,13 @@ div#notebook {
 </tbody>
 </table>
 <p>We denote this distribution with a lower case p: $p(x)$. Using ordinary function notation, we would write:</p>
-<p>$$P(X{=}4) = p(4) = \frac{1}{6}$$</p>
-<p>This states that the probability of the die landing on 4 is $\frac{1}{6}$. $P(X{=}x_k)$ is notation for "the probability of $X$ being $x_k$". Note the subtle notational difference. The capital $P$ denotes the probability of a single event, and the lower case $p$ is the probability distribution function. This can lead you astray if you are not observent. Some texts use $Pr$ instead of $P$ to ameliorate this.</p>
-<p>Another example is a fair coin. It has the sample space {H, T}. The coin is fair, so the probability for heads (H) is 50%, and the probability for tails (T) is 50%. We write this as</p>
-<p>$$\begin{gathered}P(X{=}H) = 0.5\\P(X{=}T)=0.5\end{gathered}$$</p>
-<p>Sample spaces are not unique. One sample space for a die is {1, 2, 3, 4, 5, 6}. Another valid sample space would be {even, odd}. Another might be {dots in all corners, not dots in all corners}. A sample space is valid so long as it covers all possibilities, and any single event is described by only one element.  {even, 1, 3, 4, 5} is not a valid sample space for a die since a value of 4 is matched both by 'even' and '4'.</p>
-<p>The probabilities for all values of a <em>discrete random value</em> is known as the <em>discrete probability distribution</em> and the probabilities for all values of a <em>continuous random value</em> is known as the <em>continuous probability distribution</em>.</p>
-<p>To be a probability distribution the probability of each value $x_i$ must be $x_i \ge 0$, since no probability can be less than zero. Secondly, the sum of the probabilities for all values must equal one. This should be intuitively clear for a coin toss: if the odds of getting heads is 70%, then the odds of getting tails must be 30%. We formulize this requirement as</p>
-<p>$$\sum\limits_u P(X{=}u)= 1$$</p>
-<p>for discrete distributions, and as</p>
-<p>$$\int\limits_u P(X{=}u) \,du= 1$$</p>
-<p>for continuous distributions.</p>
-<p>In the previous chapter we used probability distributions to estimate the position of a dog in a hallway. For example:</p>
 
 </div>
 </div>
 </div>
 
 <div class="cell border-box-sizing text_cell rendered right"
-	style="width:50%;float:left;"
+	style="width:50%;float:left;line-height:150%;"
 ><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -11995,8 +11983,8 @@ div#notebook {
 <h2 id="&#27010;&#29575;&#20998;&#24067;">&#27010;&#29575;&#20998;&#24067;<a class="anchor-link" href="#&#27010;&#29575;&#20998;&#24067;">&#182;</a></h2><p><a href="https://en.wikipedia.org/wiki/Probability_distribution"><strong>概率分布</strong></a>随机变量在采样空间中所有可能取值对应的概率。以一个均一的骰子为例，我们可以说概率分布是:</p>
 <table>
 <thead><tr>
-<th>Value</th>
-<th>Probability</th>
+<th>值</th>
+<th>概率</th>
 </tr>
 </thead>
 <tbody>
@@ -12027,10 +12015,86 @@ div#notebook {
 </tbody>
 </table>
 <p>我们用小写的p表示这个分布：$p(x)$. 像普通函数的记号那样，我们可以这样写：</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:80%;left:10%;position:relative;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>$$P(X{=}4) = p(4) = \frac{1}{6}$$</p>
-<p>该式的含义是，骰子给出4的概率是$\frac{1}{6}$. $P(X{=}x_k)$表示“$X$等于$x_k$的概率”。注意符号上微小的差异。大写的$P$表示单一事件的概率，而小写的$p$表示概率分布函数。如果不注意观察，你可能会迷惑。一些书本使用$Pr$作为$P$的改良。</p>
-<p>另一个例子是关于均一的硬币的。它的采样空间是{正，反}。因为硬币是均一的，所以正面（H）的概率是50%，反面（T）的概率是50%。可以写成如下这种形式，</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:50%;float:left;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This states that the probability of the die landing on 4 is $\frac{1}{6}$. $P(X{=}x_k)$ is notation for "the probability of $X$ being $x_k$". Note the subtle notational difference. The capital $P$ denotes the probability of a single event, and the lower case $p$ is the probability distribution function. This can lead you astray if you are not observent. Some texts use $Pr$ instead of $P$ to ameliorate this.</p>
+<p>Another example is a fair coin. It has the sample space {H, T}. The coin is fair, so the probability for heads (H) is 50%, and the probability for tails (T) is 50%. We write this as</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>该式表示骰子给出4的概率是$\frac{1}{6}$. $P(X{=}x_k)$表示“$X$等于$x_k$的概率”。請注意符号上微小的差异。大写$P$表示单一事件的概率，而小写的$p$表示概率分布函数。如果不注意观察，你可能会對兩者的區別感到迷惑。一些书本使用$Pr$來代替$P$來改善這一問題。</p>
+<p>再舉一個均勻硬幣的例子。硬幣的采样空间是{正，反}。因为硬币是均一的，所以正面（H）的概率是50%，反面（T）的概率同樣也是50%。於是可以作如下描述：</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:80%;left:10%;position:relative;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>$$\begin{gathered}P(X{=}H) = 0.5\\P(X{=}T)=0.5\end{gathered}$$</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:50%;float:left;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Sample spaces are not unique. One sample space for a die is {1, 2, 3, 4, 5, 6}. Another valid sample space would be {even, odd}. Another might be {dots in all corners, not dots in all corners}. A sample space is valid so long as it covers all possibilities, and any single event is described by only one element.  {even, 1, 3, 4, 5} is not a valid sample space for a die since a value of 4 is matched both by 'even' and '4'.</p>
+<p>The probabilities for all values of a <em>discrete random value</em> is known as the <em>discrete probability distribution</em> and the probabilities for all values of a <em>continuous random value</em> is known as the <em>continuous probability distribution</em>.</p>
+<p>To be a probability distribution the probability of each value $x_i$ must be $x_i \ge 0$, since no probability can be less than zero. Secondly, the sum of the probabilities for all values must equal one. This should be intuitively clear for a coin toss: if the odds of getting heads is 70%, then the odds of getting tails must be 30%. We formulize this requirement as</p>
+<p>$$\sum\limits_u P(X{=}u)= 1$$</p>
+<p>for discrete distributions, and as</p>
+<p>$$\int\limits_u P(X{=}u) \,du= 1$$</p>
+<p>for continuous distributions.</p>
+<p>In the previous chapter we used probability distributions to estimate the position of a dog in a hallway. For example:</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>采样空间不是唯一的。采样空间对于骰子来说是{1, 2, 3, 4, 5, 6}. 另一种合法的采样空间也可以是{奇, 偶}. 还可以是{所有角落都有点, 不是所有角落都有点}. 只要一个采样空间覆盖了所有的可能，且其中每一事件都由一对应元素表示，那么这个采样空间就是合法的。{偶, 1, 3, 4, 5}对于骰子来说不是合法的状态空间，因为数字4朝上的事件对应“偶”和“4”两个元素。</p>
 <p><strong>离散随机变量</strong>的所有取值的概率构成<strong>离散概率分布</strong>，<strong>连续随机变量</strong>的所有取值的概率构成<strong>连续概率分布</strong>。</p>
 <p>合法的概率分布必须满足对于任意取值$x_i$都有$x_i \ge0$，这是因为不存在负的概率。其次，所有事件的概率之和为1。这一点从投硬币实验中可以直观地看出来：如果有70%的概率正面朝上，那么反面朝上的概率就是30%. 上述条件可以形式化如下</p>
@@ -12110,7 +12174,7 @@ $$\int\limits_u P(X{=}u) \,du= 1$$</p>
 </div>
 
 <div class="cell border-box-sizing text_cell rendered right"
-	style="width:50%;float:left;"
+	style="width:50%;float:left;line-height:150%;"
 ><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12141,7 +12205,7 @@ $$\int\limits_u P(X{=}u) \,du= 1$$</p>
 </div>
 
 <div class="cell border-box-sizing text_cell rendered right"
-	style="width:50%;float:left;"
+	style="width:50%;float:left;line-height:150%;"
 ><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12194,7 +12258,7 @@ $$\int\limits_u P(X{=}u) \,du= 1$$</p>
 </div>
 
 <div class="cell border-box-sizing text_cell rendered right"
-	style="width:50%;float:left;"
+	style="width:50%;float:left;line-height:150%;"
 ><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12254,7 +12318,7 @@ $$\int\limits_u P(X{=}u) \,du= 1$$</p>
 </div>
 
 <div class="cell border-box-sizing text_cell rendered right"
-	style="width:50%;float:left;"
+	style="width:50%;float:left;line-height:150%;"
 ><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12324,7 +12388,7 @@ $$\int\limits_u P(X{=}u) \,du= 1$$</p>
 </div>
 
 <div class="cell border-box-sizing text_cell rendered right"
-	style="width:50%;float:left;"
+	style="width:50%;float:left;line-height:150%;"
 ><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12400,7 +12464,7 @@ $$\int\limits_u P(X{=}u) \,du= 1$$</p>
 </div>
 
 <div class="cell border-box-sizing text_cell rendered right"
-	style="width:50%;float:left;"
+	style="width:50%;float:left;line-height:150%;"
 ><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12418,40 +12482,107 @@ $$\int\limits_u P(X{=}u) \,du= 1$$</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h3><p>What is the expected value of a die roll?</p>
-<h3 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h3><p>Each side is equally likely, so each has a probability of 1/6. Hence
-$$\begin{aligned}
-\mathbb E[X] &amp;= 1/6\times1 + 1/6\times 2 + 1/6\times 3 + 1/6\times 4 + 1/6\times 5 + 1/6\times6 \\
-&amp;= 1/6(1+2+3+4+5+6)\\&amp;= 3.5\end{aligned}$$</p>
-<h3 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h3><p>Given the uniform continuous distribution</p>
-<p>$$f(x) = \frac{1}{b - a}$$</p>
-<p>compute the expected value for $a=0$ and $b=20$.</p>
-<h3 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h3><p>$$\begin{aligned}
-\mathbb E[X] &amp;= \int_0^{20}\, x\frac{1}{20} \,dx \\
-&amp;= \bigg[\frac{x^2}{40}\bigg]_0^{20} \\
-&amp;= 10 - 0 \\
-&amp;= 10
-\end{aligned}$$</p>
+<h3 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h3><p>Each side is equally likely, so each has a probability of 1/6. Hence</p>
 
 </div>
 </div>
 </div>
 
 <div class="cell border-box-sizing text_cell rendered right"
-	style="width:50%;float:left;"
+	style="width:50%;float:left;line-height:150%;"
 ><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="&#32244;&#32722;">&#32244;&#32722;<a class="anchor-link" href="#&#32244;&#32722;">&#182;</a></h3><p>擲骰子遊戲的期望值是多少？</p>
-<h3 id="&#35299;">&#35299;<a class="anchor-link" href="#&#35299;">&#182;</a></h3><p>每一面朝上的概率都是均等的，即概率都是1/6。故而
-$$\begin{aligned}
+<h3 id="&#35299;">&#35299;<a class="anchor-link" href="#&#35299;">&#182;</a></h3><p>每一面朝上的概率都是均等的，即概率都是1/6。故而</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:80%;left:10%;position:relative;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$\begin{aligned}
 \mathbb E[X] &amp;= 1/6\times1 + 1/6\times 2 + 1/6\times 3 + 1/6\times 4 + 1/6\times 5 + 1/6\times6 \\
 &amp;= 1/6(1+2+3+4+5+6)\\&amp;= 3.5\end{aligned}$$</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:50%;float:left;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h3><p>Given the uniform continuous distribution</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="&#32244;&#32722;">&#32244;&#32722;<a class="anchor-link" href="#&#32244;&#32722;">&#182;</a></h3><p>給定一均勻連續分布</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:80%;left:10%;position:relative;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>$$f(x) = \frac{1}{b - a}$$</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:50%;float:left;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>compute the expected value for $a=0$ and $b=20$.</p>
+<h3 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h3>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>對於$a=0$，$b=20$的情況，計算該分布的期望值。</p>
 <p>（譯者註：$a,b$是分佈的起始和終止點）</p>
-<h3 id="&#35299;">&#35299;<a class="anchor-link" href="#&#35299;">&#182;</a></h3><p>$$\begin{aligned}
+<h3 id="&#35299;">&#35299;<a class="anchor-link" href="#&#35299;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:80%;left:10%;position:relative;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$\begin{aligned}
 \mathbb E[X] &amp;= \int_0^{20}\, x\frac{1}{20} \,dx \\
 &amp;= \bigg[\frac{x^2}{40}\bigg]_0^{20} \\
 &amp;= 10 - 0 \\
@@ -12461,9 +12592,21 @@ $$\begin{aligned}
 </div>
 </div>
 </div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:50%;float:left;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Variance-of-a-Random-Variable">Variance of a Random Variable<a class="anchor-link" href="#Variance-of-a-Random-Variable">&#182;</a></h3><p>The computation above tells us the average height of the students, but it doesn't tell us everything we might want to know. For example, suppose we have three classes of students, which we label $X$, $Y$, and $Z$, with these heights:</p>
+
+</div>
+</div>
+</div>
 
 <div class="cell border-box-sizing text_cell rendered right"
-	style="width:50%;float:left;"
+	style="width:50%;float:left;line-height:150%;"
 ><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12502,7 +12645,7 @@ $$\begin{aligned}
 </div>
 
 <div class="cell border-box-sizing text_cell rendered right"
-	style="width:50%;float:left;"
+	style="width:50%;float:left;line-height:150%;"
 ><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12571,7 +12714,7 @@ $$\begin{aligned}
 </div>
 
 <div class="cell border-box-sizing text_cell rendered right"
-	style="width:50%;float:left;"
+	style="width:50%;float:left;line-height:150%;"
 ><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12650,7 +12793,7 @@ $$\begin{aligned}
 </div>
 
 <div class="cell border-box-sizing text_cell rendered right"
-	style="width:50%;float:left;"
+	style="width:50%;float:left;line-height:150%;"
 ><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12719,7 +12862,7 @@ var 0.0200
 </div>
 
 <div class="cell border-box-sizing text_cell rendered right"
-	style="width:50%;float:left;"
+	style="width:50%;float:left;line-height:150%;"
 ><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12785,7 +12928,7 @@ var 0.0200
 </div>
 
 <div class="cell border-box-sizing text_cell rendered right"
-	style="width:50%;float:left;"
+	style="width:50%;float:left;line-height:150%;"
 ><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12864,7 +13007,7 @@ std  = 0.152
 </div>
 
 <div class="cell border-box-sizing text_cell rendered right"
-	style="width:50%;float:left;"
+	style="width:50%;float:left;line-height:150%;"
 ><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12915,13 +13058,81 @@ std  = 0.152
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We'll discuss this in greater depth soon. For now let's compute the standard deviation for</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>我們很快會對此進行更深入的討論。現在我們先算出如下數組的標準差</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:80%;left:10%;position:relative;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>$$Y = [2.2, 1.5, 2.3, 1.7, 1.3]$$</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:50%;float:left;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>The mean of $Y$ is $\mu=1.8$ m, so</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$Y$的均值是$\mu=1.8$米，所以</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:80%;left:10%;position:relative;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>$$ 
 \begin{aligned}
 \sigma_y &amp;=\sqrt{\frac{(2.2-1.8)^2 + (1.5-1.8)^2 + (2.3-1.8)^2 + (1.7-1.8)^2 + (1.3-1.8)^2} {5}} \\
 &amp;= \sqrt{0.152} = 0.39 \ m
 \end{aligned}$$</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:50%;float:left;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>We will verify that with NumPy with</p>
 
 </div>
@@ -12929,19 +13140,11 @@ std  = 0.152
 </div>
 
 <div class="cell border-box-sizing text_cell rendered right"
-	style="width:50%;float:left;"
+	style="width:50%;float:left;line-height:150%;"
 ><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>我們很快會對此進行更深入的討論。現在，我們計算如下數組的標準差</p>
-<p>$$Y = [2.2, 1.5, 2.3, 1.7, 1.3]$$</p>
-<p>$Y$的均值是$\mu=1.8$米，所以</p>
-<p>$$ 
-\begin{aligned}
-\sigma_y &amp;=\sqrt{\frac{(2.2-1.8)^2 + (1.5-1.8)^2 + (2.3-1.8)^2 + (1.7-1.8)^2 + (1.3-1.8)^2} {5}} \\
-&amp;= \sqrt{0.152} = 0.39 \ m
-\end{aligned}$$</p>
 <p>我們可以用NumPy通過下式作驗證。</p>
 
 </div>
@@ -12987,25 +13190,30 @@ std  = 0.152
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This corresponds with what we would expect. There is more variation in the heights for $Y$, and the standard deviation is larger.</p>
 <p>Finally, let's compute the standard deviation for $Z$. There is no variation in the values, so we would expect the standard deviation to be zero.</p>
-<p>$$ 
-\begin{aligned}
-\sigma_z &amp;=\sqrt{\frac{(1.8-1.8)^2 + (1.8-1.8)^2 + (1.8-1.8)^2 + (1.8-1.8)^2 + (1.8-1.8)^2} {5}} \\
-&amp;= \sqrt{\frac{0+0+0+0+0}{5}} \\
-\sigma_z&amp;= 0.0 \ m
-\end{aligned}$$</p>
 
 </div>
 </div>
 </div>
 
 <div class="cell border-box-sizing text_cell rendered right"
-	style="width:50%;float:left;"
+	style="width:50%;float:left;line-height:150%;"
 ><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>這同我們的預期相吻合。因為Y的數據中含有更多的差異，所以它的標準差也相對大些。</p>
 <p>最後，計算$Z$的標準差。數值間沒有任何差異，故而標準差應為0.</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:80%;left:10%;position:relative;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>$$ 
 \begin{aligned}
 \sigma_z &amp;=\sqrt{\frac{(1.8-1.8)^2 + (1.8-1.8)^2 + (1.8-1.8)^2 + (1.8-1.8)^2 + (1.8-1.8)^2} {5}} \\
@@ -13063,7 +13271,7 @@ std  = 0.152
 </div>
 
 <div class="cell border-box-sizing text_cell rendered right"
-	style="width:50%;float:left;"
+	style="width:50%;float:left;line-height:150%;"
 ><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -13089,7 +13297,7 @@ std  = 0.152
 </div>
 
 <div class="cell border-box-sizing text_cell rendered right"
-	style="width:50%;float:left;"
+	style="width:50%;float:left;line-height:150%;"
 ><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -13158,7 +13366,7 @@ std  = 0.152
 </div>
 
 <div class="cell border-box-sizing text_cell rendered right"
-	style="width:50%;float:left;"
+	style="width:50%;float:left;line-height:150%;"
 ><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -13222,7 +13430,7 @@ Variance of X without outlier =   2.03
 </div>
 
 <div class="cell border-box-sizing text_cell rendered right"
-	style="width:50%;float:left;"
+	style="width:50%;float:left;line-height:150%;"
 ><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -13251,7 +13459,7 @@ Variance of X without outlier =   2.03
 </div>
 
 <div class="cell border-box-sizing text_cell rendered right"
-	style="width:50%;float:left;"
+	style="width:50%;float:left;line-height:150%;"
 ><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -13321,7 +13529,7 @@ Supporting_Notebooks folder. You can read it online <a href="https://github.com/
 </div>
 
 <div class="cell border-box-sizing text_cell rendered right"
-	style="width:50%;float:left;"
+	style="width:50%;float:left;line-height:150%;"
 ><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -13331,7 +13539,7 @@ Supporting_Notebooks folder. You can read it online <a href="https://github.com/
 </blockquote>
 <p>如果叫它“鐘形曲線”可能對讀者更形象。這個曲線在現實世界中無所不在，許多觀測結果都以這種形式分布。我不會使用“鐘形曲線”一詞來指代高斯分布，因為許多不同的分布都由類似鐘形曲線的形狀。來自非數學的資料不會像我這麼嚴謹，所以遇到沒有定義的術語時，下結論前要機智一些。</p>
 <p>不知是高度的分布曲線是如此——許多自然界的現象都展示出類似的分布，包括我們在濾波器問題中使用的傳感器。我們將會看到，它具有所有我們所期望的性質——它以概率的形式表示單峰的信念或值，它是連續的，且便於高效計算。我們很快還會看有一些我們還沒意識到的需求，但這些令人嚮往的特質高斯分布也具備了。</p>
-<p>為了進一步激勵你，回想一下，在“離散貝葉斯”一章中，分布的形狀是這樣的：</p>
+<p>為了給你多一點啟發，請回想一下，在“離散貝葉斯”一章中，分布的形狀是這樣的：</p>
 
 </div>
 </div>
@@ -13387,7 +13595,7 @@ Supporting_Notebooks folder. You can read it online <a href="https://github.com/
 </div>
 
 <div class="cell border-box-sizing text_cell rendered right"
-	style="width:50%;float:left;"
+	style="width:50%;float:left;line-height:150%;"
 ><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -13411,13 +13619,12 @@ Supporting_Notebooks folder. You can read it online <a href="https://github.com/
 </div>
 
 <div class="cell border-box-sizing text_cell rendered right"
-	style="width:50%;float:left;"
+	style="width:50%;float:left;line-height:150%;"
 ><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#21629;&#21517;&#27861;">&#21629;&#21517;&#27861;<a class="anchor-link" href="#&#21629;&#21517;&#27861;">&#182;</a></h2><p>在繼續之前，先學一點命名法的知識——該圖顯示一“隨機變量“在$(-\infty..\infty)$之間的任意值上都有“概率密度”。其含義是什麼？想象一下我們在一段高速公路上測量車輛的速度，測量是無限精確的。
-We could then plot the results by showing the relative number of cars going past at any given speed. If the average was 120 kph, it might look like this:</p>
+<h2 id="&#21629;&#21517;&#27861;">&#21629;&#21517;&#27861;<a class="anchor-link" href="#&#21629;&#21517;&#27861;">&#182;</a></h2><p>在繼續之前，先學一點命名法的知識——該圖顯示一“隨機變量“在$(-\infty..\infty)$之間的任意值上都有“概率密度”。其含義是什麼？想象一下我們在一段高速公路上測量車輛的速度，測量是無限精確的。那麼我們就可以畫出以任意給定速度通過關口的車數。假如平均速度是120kph，那麼圖像看起來可能像是這樣：</p>
 
 </div>
 </div>
@@ -13473,13 +13680,14 @@ We could then plot the results by showing the relative number of cars going past
 </div>
 
 <div class="cell border-box-sizing text_cell rendered right"
-	style="width:50%;float:left;"
+	style="width:50%;float:left;line-height:150%;"
 ><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>y軸表示概率密度——車速等於x軸上對應數值的相對度量。我將在後面几節詳述這一概念。</p>
-<p>高斯模型是不完美的。儘管這幾張圖沒能展現出來，但實際上高斯分佈的“尾巴”無限向外延伸。所謂“尾巴”，是指曲線上值最小的地方。當然，人類身高和車速不會小於0，更不必說$-\inf$和$\inf$了。人們常說“地圖上的不是這片土地”（譯者註：不要混淆概念和實體），這句話對貝葉斯濾波和統計也一樣適用。</p>
+<p>y軸表示“概率密度”——一個表示速度等於x軸上對應數值的車數的相對度量。我將在後面几節詳述這一概念。</p>
+<p>高斯模型是不完美的。儘管這幾張圖沒有體現，但實際上高斯分佈的“尾”無限向外延伸。這裡“尾”是指曲線上值最小的地方。當然，人類身高和車速不會小於0，更不必說$-\infty$和$\infty$了。人們常說“地圖上的不是這片土地”（譯者註：意為不要混淆概念和實體），這句話對貝葉斯濾波和統計也一樣適用。上面的高斯分佈建模了車速的分佈，但作為一個模型，它不一定是完美的。濾波器中總是存在模型與現實的差異。高斯分佈之所以在各種數學分支中都有使用，並不是因為它完美地建模了現實情況，而是因為它比其它更精確的方案更易於使用。然而即使是在本書中，也存在高斯分佈無法建模的現實問題，這使得我們不得不採用計算代價昂貴的替代方案。</p>
+<p>你可能既聽說過“高斯分佈”又聽說過“正態分佈”。在本文中，兩個指的都是一個東西，可以互相替換使用。本書會同時採用這兩種名稱，這是因為不同的來源會使用其中任意一種名稱，而我希望你同時熟悉這兩種叫法。最後，就像在這一段落中一樣，一個典型的做法將名稱縮短為“Gaussian”或者“normal”——它們都是“正態分佈”的簡寫。</p>
 
 </div>
 </div>
@@ -13492,14 +13700,96 @@ We could then plot the results by showing the relative number of cars going past
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Gaussian-Distributions">Gaussian Distributions<a class="anchor-link" href="#Gaussian-Distributions">&#182;</a></h2><p>Let's explore how Gaussians work. A Gaussian is a <em>continuous probability distribution</em> that is completely described with two parameters, the mean ($\mu$) and the variance ($\sigma^2$). It is defined as:</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#39640;&#26031;&#20998;&#20296;">&#39640;&#26031;&#20998;&#20296;<a class="anchor-link" href="#&#39640;&#26031;&#20998;&#20296;">&#182;</a></h2><p>讓我們看看高斯分佈是如何工作的。高斯分佈是一種能完全有兩個參數描述的“連續概率分佈”。這兩個參數分別是均值（$\mu$）和方差（$\sigma^2$）。高斯分佈由如下函數定義：</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:80%;left:10%;position:relative;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>$$ 
 f(x, \mu, \sigma) = \frac{1}{\sigma\sqrt{2\pi}} \exp\big [{-\frac{(x-\mu)^2}{2\sigma^2} }\big ]
 $$</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:50%;float:left;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>$\exp[x]$ is notation for $e^x$.</p>
 <p><p> Don't be dissuaded by the equation if you haven't seen it before; you will not need to memorize or manipulate it. The computation of this function is stored in <code>stats.py</code> with the function <code>gaussian(x, mean, var, normed=True)</code>.</p>
 <p>Shorn of the constants, you can see it is a simple exponential:</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$\exp[x]$即$e^x$.</p>
+<p><p>就算你之前没見過這個公式，也别被它勸退了。你不需要記住它，也不需要演算。它的計算已經存儲在<code>stats.py</code>文件的<code>gaussian(x, mean, var, normed=True)</code>中了。</p>
+<p>忽略常數項，可以看到它不過是一個指數函數：</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:80%;left:10%;position:relative;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>$$f(x)\propto e^{-x^2}$$</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:50%;float:left;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>which has the familiar bell curve shape</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>它的形狀是我們熟悉的鐘形曲線。</p>
 
 </div>
 </div>
@@ -13552,6 +13842,18 @@ $$</p>
 </div>
 </div>
 </div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>回忆一下如何查看函数的源码。在一个单元格中输入函数名并以问号结尾，然後按下CTRL+ENTER，就會跳出一個窗口，顯示出函數的源碼。將下一個單元格中代碼的注釋取消運行看看。</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[23]:</div>
@@ -13574,6 +13876,18 @@ $$</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Let's plot a Gaussian with a mean of 22 $(\mu=22)$, with a variance of 4 $(\sigma^2=4)$.</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>讓我們繪製一個均值為22$(\mu=22)$，方差為4 $(\sigma^2=4)$的高斯分佈。</p>
 
 </div>
 </div>
@@ -13624,16 +13938,105 @@ $$</p>
 <p>Recall that a Gaussian distribution is <em>continuous</em>. Think of an infinitely long straight line - what is the probability that a point you pick randomly is at 2. Clearly 0%, as there is an infinite number of choices to choose from. The same is true for normal distributions; in the graph above the probability of being <em>exactly</em> 2°C is 0% because there are an infinite number of values the reading can take.</p>
 <p>What is this curve? It is something we call the <em>probability density function.</em> The area under the curve at any region gives you the probability of those values. So, for example, if you compute the area under the curve between 20 and 22 the resulting area will be the probability of the temperature reading being between those two temperatures.</p>
 <p>Here is another way to understand it. What is the <em>density</em> of a rock, or a sponge? It is a measure of how much mass is compacted into a given space. Rocks are dense, sponges less so. So, if you wanted to know how much a rock weighed but didn't have a scale, you could take its volume and multiply by its density. This would give you its mass. In practice density varies in most objects, so you would integrate the local density across the rock's volume.</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>這個曲線的“含義”是什麼？設我們的溫度計給出讀數22C. 溫度計都是不完美的，所以我們認為每次讀數都略有偏差。然而，<a href="https://en.wikipedia.org/wiki/Central_limit_theorem">中心極限定理</a>指出如果我們做多次測量，那麼測量結果呈正態分佈。觀察這張圖，我們發現曲線高度正比於給定實際溫度為22°C時溫度計讀取到對應溫度的概率。</p>
+<p>注意高斯分佈是“連續”的。考慮一條無限長的數軸，在其上隨機取一點，取到2的概率是多少？顯然是0.因為這條直線上有無窮多點可以選擇。對於高斯分佈也是如此。在上圖中，取到的溫度“精確”地等於2°C的概率也是0，因為可以選取的數值無線多。</p>
+<p>這是一條什麼曲線？它就是我們所說的“概率密度函數”。曲線下某一區間內的面積就等於你取到區間內一數的概率。舉例來說如果你算出20到22之間的底面積，你就得到了讀取溫度在兩者之間的概率。</p>
+<p>還有另一種理解方式。試想石塊，又或者海綿的“密度”是怎樣的。密度是給定空間內質量大小的度量。石塊稠密而海綿稀鬆。如果你想知道石塊的重量卻沒有秤，你可以計算其體積與密度的乘積來得到質量。實踐中，同一物體的不同部位有不同的密度，所以需要計算石塊體積內的積分。</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:80%;left:10%;position:relative;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>$$M = \iiint_R p(x,y,z)\, dV$$</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:50%;float:left;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>We do the same with <em>probability density</em>. If you want to know the temperature being between 20°C and 21°C you would integrate the curve above from 20 to 21. As you know the integral of a curve gives you the area under the curve. Since this is a curve of the probability density, the integral of the density is the probability.</p>
 <p>What is the probability of the temperature being exactly 22°C? Intuitively, 0. These are real numbers, and the odds of 22°C vs, say, 22.00000000000017°C is infinitesimal. Mathematically, what would we get if we integrate from 22 to 22? Zero.</p>
 <p>Thinking back to the rock, what is the weight of an single point on the rock? An infinitesimal point must have no weight. It makes no sense to ask the weight of a single point, and it makes no sense to ask about the probability of a continuous distribution having a single value. The answer for both is obviously zero.</p>
 <p>In practice our sensors do not have infinite precision, so a reading of 22°C implies a range, such as 22 $\pm$ 0.1°C, and we can compute the probability of that range by integrating from 21.9 to 22.1.</p>
 <p>We can think of this in Bayesian terms or frequentist terms. As a Bayesian, if the thermometer reads exactly 22°C, then our belief is described by the curve - our belief that the actual (system) temperature is near 22°C is very high, and our belief that the actual temperature is near 18 is very low. As a frequentist we would say that if we took 1 billion temperature measurements of a system at exactly 22°C, then a histogram of the measurements would look like this curve.</p>
 <p>How do you compute the probability, or area under the curve? You integrate the equation for the Gaussian</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>這些對於“概率密度”也是一樣的。如果你想知道溫度處於20°C與21°C之間的概率，你可以計算從20到21的積分。而積分正給出了曲線在積分內的面積。因為這條曲線是概率密度曲線，所以其定積分得到的就是概率。</p>
+<p>測得的溫度恰好等於22°C的概率是？直覺上我們知道概率是0.這是因為我們討論的是實數，而取得22°C與其它數（不妨設22.00000000000017°C）的幾率都是無窮小的。數學上我們也知道從22到22的積分是零。</p>
+<p>回到石塊的問題上來，石塊上一個點的質量是多少？一個無窮小的點是沒有質量的。求單個點的質量沒有意義。同樣的，求連續分佈中單個值的概率也沒有意義。兩者的答案都是0.</p>
+<p>然而實踐中傳感器的精度是有限的，所以讀數22°C實際上表示的是一個區間，例如22 $\pm$ 0.1°C，而這個區間的概率可以通過計算21.9到22.1的積分求得。</p>
+<p>我們可以從貝葉斯學派和頻率學派兩方面考慮這一問題。從貝葉斯的角度看，如果溫度計讀數恰好是22°C，那麼我們說該曲線描述了我們的信念——溫度接近22°C處置信度高，而真實溫度在18°C附近的置信度低。從頻率學派的角度看，我們說如果在真實溫度為22°C的條件下測量十億次，那麼統計直方圖會接近上面的這條曲線。</p>
+<p>那麼要如何計算概率，或者說如何求曲線的面積呢？方法是計算高斯分佈的定積分。</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:80%;left:10%;position:relative;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>$$ \int^{x_1}_{x_0}  \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{1}{2}{(x-\mu)^2}/\sigma^2 } dx$$</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:50%;float:left;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>This is called the <em>cumulative probability distribution</em>, commonly abbreviated <em>cdf</em>.</p>
 <p>I wrote <code>filterpy.stats.norm_cdf</code> which computes the integral for you. For example, we can compute</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>這被稱為“累積概率函數”，常縮寫為“cdf”。</p>
+<p>我實現了<code>filterpy.stats.norm_cdf</code>用於計算積分。例如可以作如下計算</p>
 
 </div>
 </div>
@@ -13683,9 +14086,57 @@ Cumulative probability of range 23.5 to 24.5 is 12.10%
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The mean ($\mu$) is what it sounds like — the average of all possible probabilities. Because of the symmetric shape of the curve it is also the tallest part of the curve. The thermometer reads 22°C, so that is what we used for the mean.</p>
 <p>The notation for a normal distribution for a random variable $X$ is $X \sim\ \mathcal{N}(\mu,\sigma^2)$ where $\sim$ means <em>distributed according to</em>. This means I can express the temperature reading of our thermometer as</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>均值（$\mu$）的含義正如其名——是所有可能性的平均。由於高斯分佈具有對稱性，故而均值也恰好是曲線的最高點。溫度計讀數為22°C，所以我們用它作為均值。</p>
+<p>隨機變量$X$服從高斯分佈，記為$X \sim\ \mathcal{N}(\mu,\sigma^2)$。其中$\sim$表示“服從於……分佈”。於是我們可以將溫度計讀數表示為</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:80%;left:10%;position:relative;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>$$\text{temp} \sim \mathcal{N}(22,4)$$</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:50%;float:left;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>This is an extremely important result. Gaussians allow me to capture an infinite number of possible values with only two numbers! With the values $\mu=22$ and $\sigma^2=4$ I can compute the distribution of measurements over any range.</p>
 <p>Some sources use $\mathcal N (\mu, \sigma)$ instead of $\mathcal N (\mu, \sigma^2)$. Either is fine, they are both conventions. You need to keep in mind which form is being used if you see a term such as $\mathcal{N}(22,4)$. In this book I always use $\mathcal N (\mu, \sigma^2)$, so $\sigma=2$, $\sigma^2=4$ for this example.</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>這個結果十分重要。高斯分佈允許我們只用兩個參數來表示無窮多取值的可能性！給定值$\mu=22$與$\sigma^2=4$我可以計算任意範圍內測量值的分佈。</p>
+<p>一些來源使用$\mathcal N (\mu, \sigma)$而非$\mathcal N (\mu, \sigma^2)$表是高斯分佈。兩種表示方法都可以，它們都是慣例記法。你在看到類似於$\mathcal{N}(22,4)$的符號時，你需要知道這是哪一種記法。本書一律使用$\mathcal N (\mu, \sigma^2)$，這種記法，所以在這個例子中$\sigma=2$, $\sigma^2=4$。</p>
 
 </div>
 </div>
@@ -13698,6 +14149,18 @@ Cumulative probability of range 23.5 to 24.5 is 12.10%
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="The-Variance-and-Belief">The Variance and Belief<a class="anchor-link" href="#The-Variance-and-Belief">&#182;</a></h2><p>Since this is a probability density distribution it is required that the area under the curve always equals one. This should be intuitively clear — the area under the curve represents all possible outcomes, <em>something</em> happened, and the probability of <em>something happening</em> is one, so the density must sum to one. We can prove this ourselves with a bit of code. (If you are mathematically inclined, integrate the Gaussian equation from $-\infty$ to $\infty$)</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#26041;&#24046;&#33287;&#20449;&#24565;">&#26041;&#24046;&#33287;&#20449;&#24565;<a class="anchor-link" href="#&#26041;&#24046;&#33287;&#20449;&#24565;">&#182;</a></h2><p>所有的概率密度分佈，其虛線下的面積總是等於1. 這從直覺上很容易理解——曲線下的面積等於所有可能性的總和。一個事件發生了，那麼“所有可能性中有某種可能性為真”的概率是1. 所以概率密度的總和必須是1. 我們可以用少量代碼證明這一點。（如果你偏向於用數學方法證明，那麼你可以計算高斯分佈從$-\infty$到$\infty$的積分）</p>
 
 </div>
 </div>
@@ -13742,6 +14205,19 @@ Cumulative probability of range 23.5 to 24.5 is 12.10%
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This leads to an important insight. If the variance is small the curve will be narrow. this is because the variance is a measure of <em>how much</em> the samples vary from the mean. To keep the area equal to 1, the curve must also be tall. On the other hand if the variance is large the curve will be wide, and thus it will also have to be short to make the area equal to 1.</p>
 <p>Let's look at that graphically. We will use the aforementioned <code>filterpy.stats.gaussian</code> which can take either a single value or array of values.</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>這引出了一個重要的見解。即方差小則曲線窄。這是因為方差是樣本偏離均值的程度的度量。為使面積等於1，曲線必須變高。另一方面，方差大則曲線寬，這是因為曲線必須變矮以使得面積等於1.</p>
+<p>讓我們從圖像上理解這一點。我會使用前面提到的<code>filterpy.stats.gaussian</code>函數，它可以接受標量作為輸入，也可以接受數組作為輸入。</p>
 
 </div>
 </div>
@@ -13793,6 +14269,18 @@ Cumulative probability of range 23.5 to 24.5 is 12.10%
 </div>
 </div>
 </div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>一般<code>gaussian</code>函數會對輸出作歸一化，將輸出轉化為概率分佈。可以用<code>normed</code>參數控制這一行為。</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[28]:</div>
@@ -13832,6 +14320,18 @@ Cumulative probability of range 23.5 to 24.5 is 12.10%
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>If the Gaussian is not normalized it is called a <em>Gaussian function</em> instead of <em>Gaussian distribution</em>.</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>沒有歸一化的高斯函數就不能被稱為高斯分佈。</p>
 
 </div>
 </div>
@@ -13890,6 +14390,21 @@ Cumulative probability of range 23.5 to 24.5 is 12.10%
 </div>
 </div>
 </div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>這張圖高速我們什麼？方差$\sigma^2=0.2^2$的高斯分佈非常窄，它表明限制在$\pm 0.2$標準差的範圍內，我們非常相信$x=23$。對比之下$\sigma^2=1^2$ 的高斯分佈同樣相信$x=23$，但其相信程度沒那麼高。當我們對$x=23$的信念降低時，我們的信念就被分散到其它可能取值上去——比如，我們對$x=20$或 $x=26$的信念都提高了。$\sigma^2=0.2^2$幾乎消除了取值為$22$或$24$的可能性，而$\sigma^2=1^2$的情況下，兩者的可能性與取值為$23$的可能性相當。</p>
+<p>重新考慮溫度計的問題，我們可以將這三條曲線看作三種不同溫度計的讀數。$\sigma^2=0.2^2$的曲線表示一個相當準確的溫度計，而$\sigma^2=1^2$ 的曲線表示一個相等不準確的溫度計。注意高斯分佈為我們帶來了它的強大表示能力——我們可以完整地表示溫度計的讀數和誤差——僅需要均值和方差兩個參數。</p>
+<p>另一種等效的高斯分佈表示方式是$\mathcal{N}(\mu,1/\tau)$，其中$\mu$表示“均值”而$\tau$表示“精度”。$1/\tau = \sigma^2$，是方差的導數。儘管本書不會採用這種表示方式，但需要注意的是，這種表示方式表明方差是數據精確程度的度量。方差小則精度大——因而此處的精度是極大的。反之則精度小——這就導致信念廣泛分散開來。你需要習慣這三種不同的表示高斯分佈的方式。在貝葉斯學派的術語中，高斯分佈反映我們對測量值的“信念”，表示測量值的“精度”，表示測量值中的“方差”。它們是陳述同一事實的不同方式。</p>
+<p>我說的有點超前了。但在下一章中，我就會開始用高斯分佈表達對事物的信念，例如估計被跟蹤物體的位置或傳感器的精度。</p>
+
+</div>
+</div>
+</div>
 <div style="float:left;width:100%">
 <div class="cell border-box-sizing text_cell rendered left"
 	style="width:50%;float:left;"
@@ -13900,6 +14415,20 @@ Cumulative probability of range 23.5 to 24.5 is 12.10%
 <h2 id="The--68-95-99.7-Rule">The  68-95-99.7 Rule<a class="anchor-link" href="#The--68-95-99.7-Rule">&#182;</a></h2><p>It is worth spending a few words on standard deviation now. The standard deviation is a measure of how much the data deviates from the mean. For Gaussian distributions, 68% of all the data falls within one standard deviation ($\pm1\sigma$) of the mean, 95% falls within two standard deviations ($\pm2\sigma$), and 99.7% within three ($\pm3\sigma$). This is often called the <a href="https://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule">68-95-99.7 rule</a>. If you were told that the average test score in a class was 71 with a standard deviation of 9.4, you could conclude that 95% of the students received a score between 52.2 and 89.8 if the distribution is normal (that is calculated with $71 \pm (2 * 9.4)$).</p>
 <p>Finally, these are not arbitrary numbers. If the Gaussian for our position is $\mu=22$ meters, then the standard deviation also has units meters. Thus $\sigma=0.2$ implies that 68% of the measurements range from 21.8 to 22.2 meters. Variance is the standard deviation squared, thus $\sigma^2 = .04$ meters$^2$. As you saw in the last section, writing $\sigma^2 = 0.2^2$ can make this somewhat more meaningful, since the 0.2 is in the same units as the data.</p>
 <p>The following graph depicts the relationship between the standard deviation and the normal distribution.</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="68-95-99.7&#27861;&#21063;">68-95-99.7&#27861;&#21063;<a class="anchor-link" href="#68-95-99.7&#27861;&#21063;">&#182;</a></h2><p>現在值得花點時間討論標準差。標準差度量了數據偏離均值的程度。對於高斯分佈，68%的數據落在均值附近一標準差（$\pm1\sigma$）的範圍內，95%的數據落在兩標準差（$\pm2\sigma$）的範圍內，有99.7%落在三標準差（$\pm3\sigma$）的範圍內。這常常被叫做<a href="https://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule">68-95-99.7法則</a>。如果你得知一個班級的某次考試分數的均值是71，標準差是9.4，那麼在分數服從正態分佈的條件下你就能得出結論，認為95%的學生的分數落在52.2到89.8之間（即$71 \pm (2 * 9.4)$）。</p>
+<p>最後，它們不是任意數字。如果我們的位置服從高斯分佈，均值為$\mu=22$米，那麼其標準差的單位也是米。那麼$\sigma=0.2$表示68%的測量值落在21.8到22.2米的範圍內。方差是標準差的平方，所以$\sigma^2 = .04$平方米。正如上一小節中可以看到的那樣，寫作$\sigma^2 = 0.2^2$有時含義更加明顯，這是因為0.2的單位與原數據的單位是一樣的。</p>
+<p>下圖展示了標準差與高斯分佈的關係。</p>
 
 </div>
 </div>
@@ -13952,6 +14481,18 @@ Cumulative probability of range 23.5 to 24.5 is 12.10%
 </div>
 </div>
 </div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#21487;&#20132;&#20114;&#30340;&#39640;&#26031;&#20998;&#20296;&#22294;">&#21487;&#20132;&#20114;&#30340;&#39640;&#26031;&#20998;&#20296;&#22294;<a class="anchor-link" href="#&#21487;&#20132;&#20114;&#30340;&#39640;&#26031;&#20998;&#20296;&#22294;">&#182;</a></h2><p>我為那些使用Jupyter Notebook的讀者準備了一個可交互版本的高斯分佈圖。調整滑塊以修改$\mu$與$\sigma^2$。調整$\mu$會使得分佈左右移動，這是因為它的均值發送了改變。調整$\sigma^2$使得分佈的薄厚發生改變。</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[31]:</div>
@@ -13989,10 +14530,10 @@ Cumulative probability of range 23.5 to 24.5 is 12.10%
 
  
  
-<div id="9882020b-c247-48fb-9134-48436956ba98"></div>
+<div id="23e6d9aa-912c-43cc-b11f-645cde81f807"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#9882020b-c247-48fb-9134-48436956ba98');
+var element = $('#23e6d9aa-912c-43cc-b11f-645cde81f807');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "526bbedd96a34a399450f2bc0ff464d5", "version_major": 2, "version_minor": 0}
@@ -14013,6 +14554,29 @@ var element = $('#9882020b-c247-48fb-9134-48436956ba98');
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Finally, if you are reading this online, here is an animation of a Gaussian. First, the mean is shifted to the right. Then the mean is centered at $\mu=5$ and the variance is modified.</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>最後，我為通過瀏覽器閱讀本書的讀者準備了高斯分佈的動圖。首先，均值從左向右移，然後均值固定在$\mu=5$，方差發生改變。</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:80%;left:10%;position:relative;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p><img src='animations/04_gaussian_animate.gif'></p>
 
 </div>
@@ -14028,6 +14592,20 @@ var element = $('#9882020b-c247-48fb-9134-48436956ba98');
 <h2 id="Computational-Properties-of-Gaussians">Computational Properties of Gaussians<a class="anchor-link" href="#Computational-Properties-of-Gaussians">&#182;</a></h2><p>The discrete Bayes filter works by multiplying and adding arbitrary probability distributions. The Kalman filter uses Gaussians instead of arbitrary distributions, but the rest of the algorithm remains the same. This means we will need to multiply and add Gaussians.</p>
 <p>A remarkable property of Gaussians is that the sum of two independent independent normal variables (<a href="https://en.wikipedia.org/wiki/Sum_of_normally_distributed_random_variables">https://en.wikipedia.org/wiki/Sum_of_normally_distributed_random_variables</a>) is also normally distributed! The product is not Gaussian, but proportional to a Gaussian. There we can say that the result of multipying two Gaussian distributions is a Gaussian function (recall function in this context means that the property that the values sum to one is not guaranteed).</p>
 <p>Before we do the math, let's test this visually.</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#39640;&#26031;&#20998;&#20296;&#30340;&#35336;&#31639;&#29305;&#24615;">&#39640;&#26031;&#20998;&#20296;&#30340;&#35336;&#31639;&#29305;&#24615;<a class="anchor-link" href="#&#39640;&#26031;&#20998;&#20296;&#30340;&#35336;&#31639;&#29305;&#24615;">&#182;</a></h2><p>離散貝葉斯濾波器計算任意概率分佈的和與積。而卡爾曼濾波器使用高斯分佈，其餘部分保持一致。所以我們需要計算高斯分佈的乘積和累加。</p>
+<p>高斯分佈的一個特性是，兩個獨立的服從高斯分佈的隨機變量之和（<a href="https://en.wikipedia.org/wiki/Sum_of_normally_distributed_random_variables">https://en.wikipedia.org/wiki/Sum_of_normally_distributed_random_variables</a>）仍服從高斯分佈！高斯分佈的乘積則不是高斯分佈，但仍然與高斯分佈成比例。這裡我們可以說兩個高斯分佈的乘積是高斯函數（這裡函數的意思是其和不一定為1）。</p>
+<p>在開始數學推導之前，我們先親眼確認這些性質。</p>
 
 </div>
 </div>
@@ -14087,6 +14665,19 @@ var element = $('#9882020b-c247-48fb-9134-48436956ba98');
 </div>
 </div>
 </div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>這裡，我建立和繪製了兩個高斯分佈，分別是g1=$\mathcal N(0.8, 0.1)$和g2=$\mathcal N(1.3, 0.2)$。然後我計算它們的乘積，並對結果做歸一化。如圖所示，結果“看起來”像是一個高斯分佈。</p>
+<p>高斯分佈不是線性函數。一般情況下，非線性函數的乘積會得到其它類型的不同函數。例如，兩個正弦函數的乘積與<code>sin(x)</code>是非常不同的。</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[33]:</div>
@@ -14133,14 +14724,95 @@ var element = $('#9882020b-c247-48fb-9134-48436956ba98');
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>But the result of multiplying two Gaussians distributions is a Gaussian function. This is a key reason why Kalman filters are computationally feasible. Said another way, Kalman filters use Gaussians <em>because</em> they are computationally nice.</p>
 <p>The product of two independent Gaussians is given by:</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>但是高斯分佈的乘積仍然是高斯函數。這是卡爾曼濾波器從計算上可行的關鍵原因。從另一方面來說，卡爾曼濾波器之所以選擇高斯分佈是因為其有良好的計算性質。</p>
+<p>兩個獨立的服從高斯分佈的隨機變量的乘積如下：</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:80%;left:10%;position:relative;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>$$\begin{aligned}\mu &amp;=\frac{\sigma_1^2\mu_2 + \sigma_2^2\mu_1}{\sigma_1^2+\sigma_2^2}\\
 \sigma^2 &amp;=\frac{\sigma_1^2\sigma_2^2}{\sigma_1^2+\sigma_2^2} 
 \end{aligned}$$</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:50%;float:left;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>The sum of two Gaussians is given by</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>兩個獨立的服從高斯分佈的隨機變量的乘積如下：</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:80%;left:10%;position:relative;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>$$\begin{gathered}\mu = \mu_1 + \mu_2 \\
 \sigma^2 = \sigma^2_1 + \sigma^2_2
 \end{gathered}$$</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:50%;float:left;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>At the end of the chapter I derive these equations. However, understanding the deriviation is not very important.</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>本章的最後會給出這些式子的推導。但是我不要求你理解它們。</p>
 
 </div>
 </div>
@@ -14154,6 +14826,19 @@ var element = $('#9882020b-c247-48fb-9134-48436956ba98');
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Putting-it-all-Together">Putting it all Together<a class="anchor-link" href="#Putting-it-all-Together">&#182;</a></h2><p>Now we are ready to talk about how Gaussians can be used in filtering. In the next chapter we will implement a filter using Gaussins. Here I will explain why we would want to use Gaussians.</p>
 <p>In the previous chapter we represented probability distributions with an array. We performed the update computation by computing the element-wise product of that distribution with another distribution representing the likelihood of the measurement at each point, like so:</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#32879;&#32080;&#25152;&#26377;&#32218;&#32034;">&#32879;&#32080;&#25152;&#26377;&#32218;&#32034;<a class="anchor-link" href="#&#32879;&#32080;&#25152;&#26377;&#32218;&#32034;">&#182;</a></h2><p>現在我們可以討論高斯分佈在濾波器中的應用了。下一章我們會用高斯分佈實現一個濾波器。現在我先介紹我們為什麼要選擇高斯分佈。</p>
+<p>上一章我們給出了一個使用數組來表示概率分佈。我們通過計算數組間的逐元素乘積來實現更新操作，其中一個數組是概率分佈，另一個數組是測量值在各點的似然度，類似下面這段代碼：</p>
 
 </div>
 </div>
@@ -14211,6 +14896,19 @@ var element = $('#9882020b-c247-48fb-9134-48436956ba98');
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In other words, we have to compute 10 multiplications to get this result. For a real filter with large arrays in multiple dimensions we'd require billions of multiplications, and vast amounts of memory.</p>
 <p>But this distribution looks like a Gaussian. What if we use a Gaussian instead of an array? I'll compute the mean and variance of the posterior and plot it against the bar chart.</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>換句話說，為了要得到結果，我們需要計算十個乘法。對於實際應用的濾波器而言，所用的數組極大，維度極高，從而需要數十億次計算，佔用大量內存。</p>
+<p>然而這個離散分佈看起來是一個高斯分佈。如果我們使用高斯分佈來代替這個數組，情況會怎樣呢？我計算了後驗的均值和方差，然後把結果畫了出來。</p>
 
 </div>
 </div>
@@ -14281,14 +14979,95 @@ var element = $('#9882020b-c247-48fb-9134-48436956ba98');
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This is impressive. We can describe an entire distribution of numbers with only two numbers. Perhaps this example is not persuasive, given there are only 10 numbers in the distribution. But a real problem could have millions of numbers, yet still only require two numbers to describe it.</p>
 <p>Next, recall that our filter implements the update function with</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>結果令人映像深刻。我們僅僅只需使用兩個數就能表示整個離散分佈。這個例子的離散分佈只用到10個數，可能沒有說服力。但是實際問題中可能使用數百萬的數字，而我們仍只需用兩個參數來概括它們。</p>
+<p>接著，記得我們是這樣實現濾波器的更新函數的：</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:80%;left:10%;position:relative;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">likelihood</span><span class="p">,</span> <span class="n">prior</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">normalize</span><span class="p">(</span><span class="n">likelihood</span> <span class="o">*</span> <span class="n">prior</span><span class="p">)</span>
 </pre></div>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:50%;float:left;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>If the arrays contain a million elements, that is one million multiplications. However, if we replace the arrays with a Gaussian then we would perform that calculation with</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>如果數組中有一百萬個元素，那麼就需要一百萬次乘法。然而，如果用高斯分佈來替換數組，那乘法操作就可以這樣實現：</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:80%;left:10%;position:relative;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>$$\begin{aligned}\mu &amp;=\frac{\sigma_1^2\mu_2 + \sigma_2^2\mu_1}{\sigma_1^2+\sigma_2^2}\\
 \sigma^2 &amp;=\frac{\sigma_1^2\sigma_2^2}{\sigma_1^2+\sigma_2^2} 
 \end{aligned}$$</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:50%;float:left;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>which is three multiplications and two divisions.</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>一共是三個乘法兩個除法。</p>
 
 </div>
 </div>
@@ -14302,34 +15081,328 @@ var element = $('#9882020b-c247-48fb-9134-48436956ba98');
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Bayes-Theorem">Bayes Theorem<a class="anchor-link" href="#Bayes-Theorem">&#182;</a></h3><p>In the last chapter we developed an algorithm by reasoning about the information we have at each moment, which we expressed as discrete probability distributions. In the process we discovered <a href="https://en.wikipedia.org/wiki/Bayes%27_theorem"><em>Bayes' Theorem</em></a>. Bayes theorem tells us how to compute the probability of an event given prior information.</p>
 <p>We implemented the <code>update()</code> function with this probability calculation:</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#35997;&#33865;&#26031;&#23450;&#29702;">&#35997;&#33865;&#26031;&#23450;&#29702;<a class="anchor-link" href="#&#35997;&#33865;&#26031;&#23450;&#29702;">&#182;</a></h3><p>上一章我們實現了一個算法，它通過利用每一時刻的信息來完成推理，而這些信息是通過離散概率分佈表示的。這個過程中我們發現了<a href="https://en.wikipedia.org/wiki/Bayes%27_theorem">貝葉斯定理</a>。這個定理告訴我們如何在已知先驗的條件下計算概率。</p>
+<p>我們實現了<code>update()</code>函數來執行該概率計算：</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:80%;left:10%;position:relative;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>$$ \mathtt{posterior} = \frac{\mathtt{likelihood}\times \mathtt{prior}}{\mathtt{normalization}}$$</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:50%;float:left;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>It turns out that this is Bayes' theorem. In a second I will develop the mathematics, but in many ways that obscures the simple idea expressed in this equation. We read this as:</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>我們看到這其實就是貝葉斯定理。我馬上給出數學推導。不過從某種角度上，數學推導模糊了公式所表達的簡單思想。上面的算式可以讀作：</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:80%;left:10%;position:relative;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>$$ updated\,knowledge = \big\|likelihood\,of\,new\,knowledge\times prior\, knowledge \big\|$$</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:50%;float:left;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>where $\| \cdot\|$ expresses normalizing the term.</p>
 <p>We came to this with simple reasoning about a dog walking down a hallway. Yet, as we will see, the same equation applies to a universe of filtering problems. We will use this equation in every subsequent chapter.</p>
 <p>To review, the <em>prior</em> is the probability of something happening before we include the probability of the measurement (the <em>likelihood</em>) and the <em>posterior</em> is the probability we compute after incorporating the information from the measurement.</p>
 <p>Bayes theorem is</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>其中$\| \cdot\|$表示對中間的項做歸一化。</p>
+<p>一開始我們從關於在走廊中散步的一隻狗開始推理，然後發展出現在的這些知識。然而正如你所見，這些公式能廣泛應用於許多濾波問題。我們在後續每一章節都會使用這一公式。</p>
+<p>回想一下，“先驗”是在我們考慮測量值的概率（即“似然度”）前某事發生的概率，而“後驗”則是我們將測量的信息納入考量後的概率。</p>
+<p>貝葉斯理論指出</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:80%;left:10%;position:relative;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>$$P(A \mid B) = \frac{P(B \mid A)\, P(A)}{P(B)}$$</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:50%;float:left;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>$P(A \mid B)$ is called a <a href="https://en.wikipedia.org/wiki/Conditional_probability"><em>conditional probability</em></a>. That is, it represents the probability of $A$ happening <em>if</em> $B$ happened. For example, it is more likely to rain today compared to a typical day if it also rained yesterday because rain systems usually last more than one day. We'd write the probability of it raining today given that it rained yesterday as $P$(rain today $\mid$ rain yesterday).</p>
 <p>I've glossed over an important point. In our code above we are not working with single probabilities, but an array of probabilities - a <em>probability distribution</em>. The equation I just gave for Bayes uses probabilities, not probability distributions. However, it is equally valid with probability distributions. We use a lower case $p$ for probability distributions</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$P(A \mid B)$稱作<a href="https://en.wikipedia.org/wiki/Conditional_probability">條件概率</a>。如其名所示，它表示了“假設”$B$發生的條件下，$A$發生的概率。舉例來說，如果昨天下雨了，那麼今天下雨的概率要比以往更大一些，原因是雨天往往持續一天以上。我們可以將昨天下雨的條件下今天也下雨的概率表示為$P$(今天下雨$\mid$昨天下雨).</p>
+<p>我忽略了一個重要的問題。上面的代碼中，我們使用的是概率的數值，而不是概率的數組——即“概率分佈”。我方才為貝葉斯定理給出的公式同樣使用的概率數值，而不是概率分佈。然而其實它也同樣適用於概率分佈的情況。我們用小寫的$p$來表示概率分佈。</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:80%;left:10%;position:relative;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>$$p(A \mid B) = \frac{p(B \mid A)\, p(A)}{p(B)}$$</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:50%;float:left;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>In the equation above $B$ is the <em>evidence</em>, $p(A)$ is the <em>prior</em>, $p(B \mid A)$ is the <em>likelihood</em>, and $p(A \mid B)$ is the <em>posterior</em>. By substituting the mathematical terms with the corresponding words you can see that Bayes theorem matches our update equation. Let's rewrite the equation in terms of our problem. We will use $x_i$ for the position at <em>i</em>, and $z$ for the measurement. Hence, we want to know $P(x_i \mid z)$, that is, the probability of the dog being at $x_i$ given the measurement $z$.</p>
 <p>So, let's plug that into the equation and solve it.</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>上面的等式中，$B$是“證據”，$p(A)$是“先驗”，$p(B \mid A)$是“似然”，而$p(A \mid B)$是“後驗”。如果將式子中的數學項替換為對應的名詞，你就會發現這正與我們的更新公式吻合。讓我們根據我們的問題改寫這個公式。我們用$x_i$表示位置<em>i</em>，用$z$表示測量值。於是我們相求的是$P(x_i \mid z)$，即已知測量值$z$的條件下，狗位於位置$x_i$的概率。</p>
+<p>現在，我們將這些符號代入公式求解。</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:80%;left:10%;position:relative;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>$$p(x_i \mid z) = \frac{p(z \mid x_i) p(x_i)}{p(z)}$$</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:50%;float:left;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>That looks ugly, but it is actually quite simple. Let's figure out what each term on the right means. First is $p(z \mid x_i)$. This is the likelihood, or the probability for the measurement at every cell $x_i$. $p(x_i)$ is the <em>prior</em> - our belief before incorporating the measurements. We multiply those together. This is just the unnormalized multiplication in the <code>update()</code> function:</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>儘管它看起來很醜陋，但本質上是很簡單的。讓我們看看右側每一項的含義。首先是$p(z \mid x_i)$，它表示似然度，即測量值位於$x_i$處的概率。$p(x_i)$是“先驗”——即我們考慮測量值之前的信念。我們將兩項相乘，也就得到了<code>update()</code>的不做歸一化的版本：</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:80%;left:10%;position:relative;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">likelihood</span><span class="p">,</span> <span class="n">prior</span><span class="p">):</span>
     <span class="n">posterior</span> <span class="o">=</span> <span class="n">prior</span> <span class="o">*</span> <span class="n">likelihood</span>   <span class="c1"># p(z|x) * p(x)</span>
     <span class="k">return</span> <span class="n">normalize</span><span class="p">(</span><span class="n">posterior</span><span class="p">)</span>
 </pre></div>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:50%;float:left;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>The last term to consider is the denominator $p(z)$. This is the probability of getting the measurement $z$ without taking the location into account. It is often called the <em>evidence</em>. We compute that by taking the sum of $x$, or <code>sum(belief)</code> in the code. That is how we compute the normalization! So, the <code>update()</code> function is doing nothing more than computing Bayes' theorem.</p>
 <p>The literature often gives you these equations in the form of integrals. After all, an integral is just a sum over a continuous function. So, you might see Bayes' theorem written as</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>最後考慮分母中的$p(z)$. 它是不考慮實際位置的情況下，取得測量值$z$的概率。它常被稱為“證據”。代碼中，我們通過求$x$的和，即<code>sum(belief)</code>來計算它。這也和我們做歸一化的方式是一樣的！所以，<code>update()</code>本質上所作的事情就是計算貝葉斯公式。</p>
+<p>許多文獻給出的是這個公式的積分形式。不論如何，積分本質上只是對連續函數的求和。所以，你可能會看到這種形式的貝葉斯定理：</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:80%;left:10%;position:relative;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>$$p(A \mid B) = \frac{p(B \mid A)\, p(A)}{\int p(B \mid A_j) p(A_j) \,\, \mathtt{d}A_j}\cdot$$</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:50%;float:left;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>This denominator is usually impossible to solve analytically; when it can be solved the math is fiendishly difficult. A recent <a href="http://www.statslife.org.uk/opinion/2405-we-need-to-rethink-how-we-teach-statistics-from-the-ground-up">opinion piece </a>for the Royal Statistical Society called it a "dog's breakfast" [8].  Filtering textbooks that take a Bayesian approach are filled with integral laden equations with no analytic solution. Do not be cowed by these equations, as we trivially handled this integral by normalizing our posterior. We will learn more techniques to handle this in the <strong>Particle Filters</strong> chapter. Until then, recognize that in practice it is just a normalization term over which we can sum. What I'm trying to say is that when you are faced with a page of integrals, just think of them as sums, and relate them back to this chapter, and often the difficulties will fade. Ask yourself "why are we summing these values", and "why am I dividing by this term". Surprisingly often the answer is readily apparent. Surprisingly often the author neglects to mention this interpretation.</p>
 <p>It's probable that the strength of Bayes' theorem is not yet fully apparent to you. We want to compute $p(x_i \mid Z)$. That is, at step i, what is our probable state given a measurement. That's an extraordinarily difficult problem in general. Bayes' Theorem is general. We may want to know the probability that we have cancer given the results of a cancer test, or the probability of rain given various sensor readings. Stated like that the problems seem unsolvable.</p>
 <p>But Bayes' Theorem lets us compute this by using the inverse  $p(Z\mid x_i)$, which is often straightforward to compute</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>其中的分母基本不可能有解析解。即使可以求解，其數學過程也極其繁難。最近英国皇家统计学的<a href="http://www.statslife.org.uk/opinion/2405-we-need-to-rethink-how-we-teach-statistics-from-the-ground-up">意見書</a>中把它叫做“狗的早餐”[8]。濾波器的課本中，無解析解的積分方程隨處可見。你不必畏懼這些公式，因為我們用簡單的對後驗做歸一化就能處理這個積分。在<strong>粒子濾波器</strong>一章，我們會學到更多處理這類情況的技術。在此之前，你只需要知道這是一個可求和的歸一化項。我想說的是，當你面對一整頁積分時，只需知道它們就是求和。將它們和本章內容聯繫起來，困難就會消失。問問自己“為什麼要求這些值的和？”，“為什麼要除以這個數？”。令人驚訝的是，答案往往顯而易見，以及作者有時候會忘記解釋其中的道理。</p>
+<p>可能你還沒有清楚認識到貝葉斯定理的威力。要知道計算$p(x_i \mid Z)$，即給定測量值的條件下計算可能狀態是什麼，這件事情通常是極困難的。貝葉斯定理是通用的。我們可能想在得到癌症檢測報告後知道罹患癌症的概率，或者在已有多種傳感器數據的情況下，天會下雨的概率。這些問題看起來是很難直接求解的。</p>
+<p>但貝葉斯定理允許我們反過來計算$p(Z\mid x_i)$，而這通常是容易直接計算的。</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:80%;left:10%;position:relative;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>$$p(x_i \mid Z) \propto p(Z\mid x_i)\, p(x_i)$$</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:50%;float:left;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>That is, to compute how likely it is to rain given specific sensor readings we only have to compute the likelihood of the sensor readings given that it is raining! That's a <strong><em>much</em></strong> easier problem! Well, weather prediction is still a difficult problem, but Bayes makes it tractable.</p>
 <p>Likewise, as you saw in the Discrete Bayes chapter, we computed the likelihood that Simon was in any given part of the hallway by computing how likely a sensor reading is given that Simon is at position <code>x</code>. A hard problem becomes easy.</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>即是說，要想知道已有特定傳感器數據的情況下落雨的概率，只須計算下雨時傳感器讀數的可能性！這是一個相比之下<strong>相當</strong>簡單的問題！好吧，天氣預報仍然是一個很難的問題，但貝葉斯定理至少讓它簡單了些。</p>
+<p>正如你在“離散貝葉斯”一章中所見，我們通過計算西蒙位於位置<code>x</code>時傳感器讀數的可能性來計算西蒙在走廊任意區域的可能性。這就將複雜的問題簡化了。</p>
 
 </div>
 </div>
@@ -14342,8 +15415,65 @@ var element = $('#9882020b-c247-48fb-9134-48436956ba98');
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Total-Probability-Theorem">Total Probability Theorem<a class="anchor-link" href="#Total-Probability-Theorem">&#182;</a></h3><p>We now know the formal mathematics behind the <code>update()</code> function; what about the <code>predict()</code> function? <code>predict()</code> implements the <a href="https://en.wikipedia.org/wiki/Law_of_total_probability"><em>total probability theorem</em></a>. Let's recall what <code>predict()</code> computed. It computed the probability of being at any given position given the probability of all the possible movement events. Let's express that as an equation. The probability of being at any position $i$ at time $t$ can be written as $P(X_i^t)$. We computed that as the sum of the prior at time $t-1$ $P(X_j^{t-1})$ multiplied by the probability of moving from cell $x_j$ to $x_i$. That is</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#20840;&#27010;&#29575;&#23450;&#29702;">&#20840;&#27010;&#29575;&#23450;&#29702;<a class="anchor-link" href="#&#20840;&#27010;&#29575;&#23450;&#29702;">&#182;</a></h3><p>我們已經正式知道了<code>update()</code>函數背後的數學原理。那麼<code>predict()</code>函數呢？<code>predict()</code>實現的是<a href="https://en.wikipedia.org/wiki/Law_of_total_probability">全概率定理</a>。讓我們回憶一下<code>predict()</code>是如何計算的。它計算的是所有可能的移動方式下目標來到指定位置的概率。目標在時刻$t$來到位置$i$的概率可以記為$P(X_i^t)$. 我們計算$t-1$時刻的先驗$P(X_j^{t-1})$與從$x_j$移動到$x_i$的概率的積，並對所有可能的$j$求和。即</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:80%;left:10%;position:relative;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>$$P(X_i^t) = \sum_j P(X_j^{t-1})  P(x_i | x_j)$$</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:50%;float:left;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>That equation is called the <em>total probability theorem</em>. Quoting from Wikipedia [6] "It expresses the total probability of an outcome which can be realized via several distinct events". I could have given you that equation and implemented <code>predict()</code>, but your chances of understanding why the equation works would be slim. As a reminder, here is the code that computes this equation</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>該公式稱為“全概率公式”。維基百科[6]中寫道“它表示了通過不同事件實現某一結果的總的概率”。如果我只告訴你這個公式和實現<code>predict()</code>函數的方法的話也行，但這樣一來你就無法理解為什麼這個公式能夠運作了。作為提醒，實現該公式的代碼如下</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:80%;left:10%;position:relative;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">kN</span><span class="p">):</span>
         <span class="n">index</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="p">(</span><span class="n">width</span><span class="o">-</span><span class="n">k</span><span class="p">)</span> <span class="o">-</span> <span class="n">offset</span><span class="p">)</span> <span class="o">%</span> <span class="n">N</span>
@@ -14362,6 +15492,19 @@ var element = $('#9882020b-c247-48fb-9134-48436956ba98');
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Computing-Probabilities-with-scipy.stats">Computing Probabilities with scipy.stats<a class="anchor-link" href="#Computing-Probabilities-with-scipy.stats">&#182;</a></h2><p>In this chapter I used code from <a href="https://github.com/rlabbe/filterpy">FilterPy</a> to compute and plot Gaussians. I did that to give you a chance to look at the code and see how these functions are implemented.  However, Python comes with "batteries included" as the saying goes, and it comes with a wide range of statistics functions in the module <code>scipy.stats</code>. So let's walk through how to use scipy.stats to compute statistics and probabilities.</p>
 <p>The <code>scipy.stats</code> module contains a number of objects which you can use to compute attributes of various probability distributions. The full documentation for this module is here: <a href="http://docs.scipy.org/doc/scipy/reference/stats.html">http://docs.scipy.org/doc/scipy/reference/stats.html</a>. We will focus on the  norm variable, which implements the normal distribution. Let's look at some code that uses <code>scipy.stats.norm</code> to compute a Gaussian, and compare its value to the value returned by the <code>gaussian()</code> function from FilterPy.</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#29992;scipy.stats&#21253;&#35336;&#31639;&#27010;&#29575;">&#29992;scipy.stats&#21253;&#35336;&#31639;&#27010;&#29575;<a class="anchor-link" href="#&#29992;scipy.stats&#21253;&#35336;&#31639;&#27010;&#29575;">&#182;</a></h2><p>本章中我用了<a href="https://github.com/rlabbe/filterpy">FilterPy</a>來做計算和繪製高斯分佈。這樣你可以查看庫的源代碼從而了解各函數的實現方式。不過正如俗話所說，Python是“自帶電池”的。<code>scipy.stats</code>包同樣提供了豐富的統計函數。所以我們不妨看看如何使用scipy.stats來計算統計量和概率。</p>
+<p><code>scipy.stats</code>模塊包含許多對象，你可以用它們計算許多種概率分佈的屬性。這個模塊的完整文檔可以從這裡找到：<a href="http://docs.scipy.org/doc/scipy/reference/stats.html">http://docs.scipy.org/doc/scipy/reference/stats.html</a>. 我們先關注於norm變量，它實現了正態分佈。讓我們看看一些使用<code>scipy.stats.norm</code>計算高斯分佈的代碼，並對比該代碼與FilterPy的<code>guassian()</code>函數在返回值上有什麼不同。</p>
 
 </div>
 </div>
@@ -14409,6 +15552,18 @@ var element = $('#9882020b-c247-48fb-9134-48436956ba98');
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The call <code>norm(2, 3)</code> creates what scipy calls a 'frozen' distribution - it creates and returns an object with a mean of 2 and a standard deviation of 3. You can then use this object multiple times to get the probability density of various values, like so:</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>調用<code>norm(2, 3)</code>建立了一個分佈。在scipy中，這被稱為是“凍住”的分佈——它建立和返回了一個均值為2，標準差為3的對象。你可以重複使用該對象以獲取多個點處的概率密度，例如：</p>
 
 </div>
 </div>
@@ -14461,6 +15616,18 @@ pdf of 2 is         0.1330
 </div>
 </div>
 </div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="http://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.norm.html#scipy.stats.normfor">scipy.stats.norm</a>[2]處的文檔列舉了許多其它函數。例如我們可以利用<code>rvs()</code>函數從分佈中生成$n$個樣本。</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[38]:</div>
@@ -14507,6 +15674,18 @@ pdf of 2 is         0.1330
 </div>
 </div>
 </div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>我們也可以使用<a href="https://en.wikipedia.org/wiki/Cumulative_distribution_function">累積分佈函數(CDF)</a>來計算取得的隨機變量小於等於$x$的概率。</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[39]:</div>
@@ -14547,6 +15726,18 @@ pdf of 2 is         0.1330
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We can get various properties of the distribution:</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>我們還可以查詢分佈的許多屬性：</p>
 
 </div>
 </div>
@@ -14598,6 +15789,22 @@ mean is 2.0
 <p>This is a broad topic which I will not treat exhaustively.</p>
 <p>Let's consider a trivial example. We think of things like test scores as being normally distributed. If you have ever had a professor “grade on a curve” you have been subject to this assumption. But of course test scores cannot follow a normal distribution. This is because the distribution assigns a nonzero probability distribution for <em>any</em> value, no matter how far from the mean. So, for example, say your mean is 90 and the standard deviation is 13. The normal distribution assumes that there is a large chance of somebody getting a 90, and a small chance of somebody getting a 40. However, it also implies that there is a tiny chance of somebody getting a grade of -10, or 150. It assigns an extremely small chance of getting a score of $-10^{300}$ or $10^{32986}$. The tails of a Gaussian distribution are infinitely long.</p>
 <p>But for a test we know this is not true. Ignoring extra credit, you cannot get less than 0, or more than 100. Let's plot this range of values using a normal distribution to see how poorly this represents real test scores distributions.</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#21033;&#29992;&#39640;&#26031;&#20998;&#20296;&#24314;&#27169;&#19990;&#30028;&#30340;&#23616;&#38480;">&#21033;&#29992;&#39640;&#26031;&#20998;&#20296;&#24314;&#27169;&#19990;&#30028;&#30340;&#23616;&#38480;<a class="anchor-link" href="#&#21033;&#29992;&#39640;&#26031;&#20998;&#20296;&#24314;&#27169;&#19990;&#30028;&#30340;&#23616;&#38480;">&#182;</a></h2><p>早先我提到“中心極限定理”，它表明一定條件下，給定一組獨立隨機變量，不論它們服從何種分佈，它們的和都服從正態分佈。這點對於我們很重要，因為自然界中不滿足正態分佈的隨機變量太多了，但是只要在大量樣本上應用中心極限定理，我們就會得到正態分佈。</p>
+<p>然而，證明的關鍵在於所謂的“一定條件”。對於物理世界來說，這個條件不一定是可以滿足的。例如，廚房用秤的讀數不能小於0. 但如果我們用高斯分佈表示其測量誤差，那麼曲線的左側會一直延伸到負無窮，這表示它有非常小的概率還是能讀到負數。</p>
+<p>我不會詳盡論述這一廣闊的話題。</p>
+<p>考慮一個簡單的例子。我們認為諸如考試分數一類的數字服從正態分佈。如果你曾經有一份某教授的“評分曲線”，那麼你可能也受到這個假設的影響。但是，其實考試分數不可能服從正態分佈。這是因為正態分佈為“任意”數值都賦予了非零概率，不論這個數字離均值有多麼遠。例如，假設均值為10，標準差為13，那麼正態分佈認為某人取得90分的概率是很高的，而取得40分的概率是很低的。然而它也認為存在微小的概率使得某人取得的分數為-10或者150。它也為分數為$-10^{300}$和$10^{32986}$的情況分配了極小的概率。高斯分佈的尾巴是無限長的。</p>
+<p>我們知道這在考試中是不可能發生的。不考慮額外加分，你既不可能取得小於0的分數，也不可能取得大於100的分數。我們將正態分佈畫出來，看看它對真實的分數分佈擬合得多麼差。</p>
 
 </div>
 </div>
@@ -14655,6 +15862,21 @@ mean is 2.0
 </div>
 </div>
 </div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>曲線下的面積不等於1，所以這不是一個合法的概率分佈。舉例來說，真實情況可能是有更多的學生的分佈處於上界附近，於是分佈的尾部變得更“肥”。此外，考試可能無法區分學生技能的細微差異，使得均值左側的分佈在某些地方有些集中。</p>
+<p>傳感器反映了真實的世界。所以，傳感器的誤差往往不真正服從正態分佈。現在談它對卡爾曼濾波器設計的負面影響還為時過早，但你不妨先記住卡爾曼濾波器的數學原理基於理想的世界模型。我現在展示一段生成分佈的代碼，之後我會用它來模擬各式各樣的過程模型以及傳感器模型。這裡用到的分佈叫做
+<a href="https://en.wikipedia.org/wiki/Student%27s_t-distribution">學生t-分佈</a>。</p>
+<p>設我們要建模的傳感器的輸出包含白噪聲。為簡單起見，設信號為常數10，噪聲的標準差為2. 我們可以用函數<code>numpy.random.randn()</code>得到均值為0標準差為1的隨機數。於是我可以通過如下代碼模擬該傳感器：</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[42]:</div>
@@ -14678,6 +15900,18 @@ mean is 2.0
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Let's plot that signal and see what it looks like.</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>畫出來的信號長這樣。</p>
 
 </div>
 </div>
@@ -14727,6 +15961,19 @@ mean is 2.0
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>That looks like what I would expect. The signal is centered around 10. A standard deviation of 2 means that 68% of the measurements will be within $\pm$ 2 of 10, and 99% will be within $\pm$ 6 of 10, and that looks like what is happening.</p>
 <p>Now let's look at distribution generated with the Student's $t$-distribution. I will not go into the math, but just give you the source code for it and then plot a distribution using it.</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>圖像與我的預期一致。信號以10為中心。標準差為2，所以68%的測量值落在10$\pm$2的範圍內，99%的測量值落在10$\pm$6的範圍內，與觀察相符。</p>
+<p>現在看看學生t-分佈生成的分佈。我不會深入介紹數學原理，只是簡單的給出源代碼，並且用它向你展示繪製出的分佈。</p>
 
 </div>
 </div>
@@ -14804,9 +16051,58 @@ mean is 2.0
 <p>It is unlikely that the Student's $t$-distribution is an accurate model of how your sensor (say, a GPS or Doppler) performs, and this is not a book on how to model physical systems. However, it does produce reasonable data to test your filter's performance when presented with real world noise. We will be using distributions like these throughout the rest of the book in our simulations and tests.</p>
 <p>This is not an idle concern. The Kalman filter equations assume the noise is normally distributed, and perform sub-optimally if this is not true. Designers for mission critical filters, such as the filters on spacecraft, need to master a lot of theory and empirical knowledge about the performance of the sensors on their spacecraft. For example, a presentation I saw on a NASA mission stated that while theory states that they should use 3 standard deviations to distinguish noise from valid measurements in practice they had to use 5 to 6 standard deviations. This was something they determined by experiments.</p>
 <p>The code for rand_student_t is included in <code>filterpy.stats</code>. You may use it with</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>從圖上可以看到，輸出與正態分佈相似，但是超出3個標準差範圍（7到13）的離群點數量更多一些。</p>
+<p>學生t-分佈並不能準確建模你的傳感器（比如GPS或多普勒雷達）。本書主題也不在於如何建模物理系統。儘管如此，當需要呈現真實世界的噪聲時，使用它來測試濾波器的性能還是合理的。本書後續的仿真和測試都會使用這樣的分佈。</p>
+<p>這樣做並非因為我們在杞人憂天。卡爾曼濾波器假設噪聲服從高斯分佈，一旦該假設不成立，那麼高斯分佈就不能以理想狀態工作。關鍵任務的濾波器設計，比如航天器的濾波器設計，不僅需要對大量理論知識的掌握，還需要對航天器的傳感器性能有經驗性的認識。舉一個例子，有一次我看到NASA的演示文檔上這樣說，說理論上應當用3個標準差作為判定噪聲與有效測量值的界限，但實際上他們使用的是5到6個標準差，而這是通過實驗確定的。</p>
+<p>rand_student_t的代碼包含於<code>filterpy.stats</code>. 你可以這樣使用它：</p>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:80%;left:10%;position:relative;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">filterpy.stats</span> <span class="kn">import</span> <span class="n">rand_student_t</span>
 </pre></div>
+
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:50%;float:left;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>While I'll not cover it here, statistics has defined ways of describing the shape of a probability distribution by how it varies from an exponential distribution. The normal distribution is shaped symmetrically around the mean - like a bell curve. However, a probability distribution can be asymmetrical around the mean. The measure of this is called <a href="https://en.wikipedia.org/wiki/Skewness"><em>skew</em></a>. The tails can be shortened, fatter, thinner, or otherwise shaped differently from an exponential distribution. The measure of this is called <a href="https://en.wikipedia.org/wiki/Kurtosis"><em>kurtosis</em></a>. the <code>scipy.stats</code> module contains the function <code>describe</code> which computes these statistics, among others.</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>以下內容不會詳述，但我簡單提一下。統計學定義了多種通過分佈與指數分佈的差異來描述分佈形狀的方法。正態分佈關於均值對稱，形如鐘形曲線。但一般的概率分佈則未必關於均值對稱。這一不對稱性的度量叫作<a href="https://en.wikipedia.org/wiki/Skewness">偏斜度</a>。分佈的尾部可以偏短，偏胖，偏瘦，或者以其他方式有別於指數分佈。這一差異的度量叫作<a href="https://en.wikipedia.org/wiki/Kurtosis">峰度</a>。<code>scipy.stats</code>模塊的<code>describe</code>函數能計算包含這些度量在內的各類統計量。</p>
 
 </div>
 </div>
@@ -14857,6 +16153,18 @@ mean is 2.0
 </div>
 </div>
 </div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>我們觀察看看一大一小兩個正態分佈的情況：</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[47]:</div>
@@ -14900,6 +16208,18 @@ DescribeResult(nobs=300000, minmax=(-4.648089038058865, 4.464044626625718), mean
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The small sample has very non-zero skew and kurtosis because the small number of samples is not well distributed around the mean of 0. You can see this also by comparing the computed mean and variance with the theoretical mean of 0 and variance 1. In comparison the large sample's mean and variance are very close to the theoretical values, and both the skew and kurtosis are near zero.</p>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>小的那份樣本的偏斜度和峰度非零，這是因為樣本數量少，故而樣本沒有良好地分佈在以0為中心的區域。通過比較統計均值/標準差和理論均值/標準差也可以驗證這點。後者分別是0和1. 大的那份樣本的均值與標準差更接近理論值，其偏斜度和峰度接近0.</p>
 
 </div>
 </div>
@@ -15022,9 +16342,20 @@ $$</p>
 </div>
 </div>
 </div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#21443;&#32771;&#36039;&#26009;">&#21443;&#32771;&#36039;&#26009;<a class="anchor-link" href="#&#21443;&#32771;&#36039;&#26009;">&#182;</a></h2>
+</div>
+</div>
+</div>
 <div style="float:left;width:100%">
 <div class="cell border-box-sizing text_cell rendered left"
-	style="width:50%;float:left;"
+	style="width:80%;left:10%;position:relative;"
 ><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -15047,7 +16378,29 @@ $$</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Useful-Wikipedia-Links">Useful Wikipedia Links<a class="anchor-link" href="#Useful-Wikipedia-Links">&#182;</a></h2><p><a href="https://en.wikipedia.org/wiki/Probability_distribution">https://en.wikipedia.org/wiki/Probability_distribution</a></p>
+<h2 id="Useful-Wikipedia-Links">Useful Wikipedia Links<a class="anchor-link" href="#Useful-Wikipedia-Links">&#182;</a></h2>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered right"
+	style="width:50%;float:left;line-height:150%;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#24190;&#20491;&#26377;&#29992;&#30340;&#32173;&#22522;&#30334;&#31185;&#37832;&#25509;">&#24190;&#20491;&#26377;&#29992;&#30340;&#32173;&#22522;&#30334;&#31185;&#37832;&#25509;<a class="anchor-link" href="#&#24190;&#20491;&#26377;&#29992;&#30340;&#32173;&#22522;&#30334;&#31185;&#37832;&#25509;">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div style="float:left;width:100%">
+<div class="cell border-box-sizing text_cell rendered left"
+	style="width:80%;left:10%;position:relative;"
+><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://en.wikipedia.org/wiki/Probability_distribution">https://en.wikipedia.org/wiki/Probability_distribution</a></p>
 <p><a href="https://en.wikipedia.org/wiki/Random_variable">https://en.wikipedia.org/wiki/Random_variable</a></p>
 <p><a href="https://en.wikipedia.org/wiki/Sample_space">https://en.wikipedia.org/wiki/Sample_space</a></p>
 <p><a href="https://en.wikipedia.org/wiki/Central_tendency">https://en.wikipedia.org/wiki/Central_tendency</a></p>
